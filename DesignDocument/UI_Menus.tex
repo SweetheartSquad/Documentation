@@ -1,0 +1,51 @@
+\section{Menus}
+\ourgame{} has three menus: the \textbf{Main Menu}, which is displayed to the user when the game is launched and when the user pauses the game; the \textbf{Options Menu}, which can be accessed through the Main Menu; and the \textbf{Inventory Menu}, which can be accessed during gameplay. 
+
+\begin{figure}[htb]
+  \centering\begin{subfigure}{.33\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{images/menu_main}
+    \caption{Main Menu}
+    \label{fig:menu_main}
+  \end{subfigure}
+  \begin{subfigure}{.33\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{images/menu_options}
+    \caption{Options Menu}
+    \label{fig:menu_options}
+  \end{subfigure}
+  \begin{subfigure}{.33\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{images/UI_inventory}
+    \caption{Inventory Menu}
+    \label{fig:menu_inventory}
+  \end{subfigure}
+  \caption{Menus in \ourgame{}}
+  \label{fig:menus}
+\end{figure}
+
+\subsection{Main Menu}
+The main menu of \ourgame{} will include three main options:
+\begin{enumerate}
+\item{Join the party!: Start a new game, or continue a previously saved game}
+\item{Options: Configure the game's settings}
+\item{Call it a night: Prompts the user to quit the game}
+\end{enumerate}
+
+\subsection{Options Menu}
+The options menu of \ourgame{} will include three main controls, one of which is split into four sub-controls: 
+\begin{enumerate}
+\item{Resolution: Sets the game window size to one of the monitor's supported video modes}
+\item{Fullscreen: Lets the user decide whether to run the game in windowed or fullscreen mode}
+\item{Categorized volume controls: Lets the user decide the volume of different elements of the game individually
+\begin{enumerate}
+	\item{Master: affects the volume of every audio file played}
+	\item{Music: affects the volume of the audio files containing background music}
+	\item{Voice: affects the volume of the audio files used when characters are speaking}
+	\item{Sound Effects: affects the volume of the rest of the audio files used throughout the game}
+\end{enumerate}}
+\end{enumerate}
+
+\subsection{Inventory Menu}
+\label{sec:inventory}
+As players will typically come across many different items in a single run, \ourgame{} will have an inventory system which allows the player to store these items for later use. This inventory will show all of the player's currently stored items as 2D sprites inside a backpack's outline, as shown in Figure~\ref{fig:menu_inventory}.

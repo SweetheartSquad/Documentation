@@ -1,0 +1,36 @@
+\documentclass{GlobalDocument}
+\usepackage[landscape, top=0.5in, bottom=0.5in, left=2in, right=0.3in]{geometry}
+\usepackage{subcaption} % for sub-figures
+\usepackage{array}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{wrapfig}
+
+\usepackage{float}
+
+\begin{document}
+% Title Page
+\title{Design Document}
+\author{\ourteam}
+
+%\maketitle
+\includepdf{TitlePage}
+
+\BgUsetrue % activates background (leave this off while working, it makes the compilation waaay slower)
+
+\include{GeneralInformation}
+
+\include{ProjectOverview}
+\include{StorySetting}
+\include{Gameplay}
+\include{ProceduralGeneration}
+\include{ScenarioEditor}
+\include{UI}
+\include{UserTests}
+\include{References}
+\include{MarketingStrats}
+
+\include{Appendix}
+
+\end{document}

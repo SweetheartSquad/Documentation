@@ -1,0 +1,723 @@
+\n{Work Package 1 : September}
+\subsection{Game}
+\subsubsection{Assets}
+\begin{enumerate}
+\item Concept Art
+\item Character Style Specification
+\item 10 Character Designs
+\item 4 Sets of 3D Chair and Table Components
+\item 4 Sets of Table Components
+\item 4 Sets of Lamp Components
+\end{enumerate}
+\subsubsection{Player Controls}
+\begin{enumerate}
+\item Generic First Person Player Controller
+\end{enumerate}
+\subsubsection{Procedural Furniture Generation}
+\begin{enumerate}
+\item Mock-Up and Prototype
+\end{enumerate}
+\subsubsection{Narrative Content}
+\begin{enumerate}
+\item Rough Draft of Story
+\end{enumerate}
+\subsubsection{Character Interaction - Conversations}
+\begin{enumerate}
+\item Generic Conversation System
+\end{enumerate}
+\subsubsection{UI}
+\begin{enumerate}
+\item Escape Menu
+\end{enumerate}
+\subsubsection{Room Generation}
+\begin{enumerate}
+\item Map Generator
+\item Scenario Handler
+\end{enumerate}
+\subsubsection{Character Animation}
+\begin{enumerate}
+\item Humanoid Character Rig
+\end{enumerate}
+\subsubsection{Audio Visual Ties - Visual Distortion}
+\begin{enumerate}
+\item Prototype Screen Space Shaders
+\end{enumerate}
+\subsubsection{Loading Scenarios}
+\begin{enumerate}
+\item Individual Scenario Loader
+\end{enumerate}
+
+%////////////////////////////////////////////%
+
+\subsection{Engine}
+\subsubsection{Input}
+\begin{enumerate}
+\item Mouse Input System
+\item Keyboard Input System
+\item Controller Input System
+\end{enumerate}
+\subsubsection{Shaders}
+\begin{enumerate}
+\item Base Shader Class
+\end{enumerate}
+\subsubsection{Transform Hierarcy}
+\begin{enumerate}
+\item Matrix Stack
+\end{enumerate}
+\subsubsection{File Loading and Processing}
+\begin{enumerate}
+\item Texture Loader
+\end{enumerate}
+\subsubsection{Node System}
+\begin{enumerate}
+\item Base Node Class
+\item Node Updateable
+\item Node Renderable
+\end{enumerate}
+\subsubsection{SWEET}
+\begin{enumerate}
+\item Engine Initializer and Destructor
+\end{enumerate}
+\subsubsection{OpenGL: Window}
+\begin{enumerate}
+\item OpenGL Window
+\end{enumerate}
+\subsubsection{OpenGL: Context}
+\begin{enumerate}
+\item OpenGL Context
+\end{enumerate}
+
+%////////////////////////////////////////////%
+
+\subsection{Scenario Editor}
+\subsubsection{System Setup}
+\begin{enumerate}
+\item Django Application
+\item Angular JS Application
+\end{enumerate}
+\subsubsection{Conversation Editor}
+\begin{enumerate}
+\item Conversation Editor
+\end{enumerate}
+
+%--------------------------------------------%
+
+\n{Work Package 2 : October}
+\subsection{Game}
+\subsubsection{Assets}
+\begin{enumerate}
+\item 20 Character Designs 
+\item 4 Sets of Character Components
+\item 1 Song
+\item 10 Props
+\item 4 Toilets
+\item 4 Sinks
+\item 4 Bath/Showers
+\item 4 Potted Plants
+\end{enumerate}
+\subsubsection{Player Controls}
+\begin{enumerate}
+\item Polished Player Controller
+\end{enumerate}
+\subsubsection{Item Generation}
+\begin{enumerate}
+\item Generic Cupcake Specification System
+\end{enumerate}
+\subsubsection{Procedural Character Generation}
+\begin{enumerate}
+\item Random Character Generator
+\end{enumerate}
+\subsubsection{Procedural Furniture Generation}
+\begin{enumerate}
+\item Chair and Table Generator
+\end{enumerate}
+\subsubsection{Character Interaction - Conversations}
+\begin{enumerate}
+\item Conversation Iterator
+\end{enumerate}
+\subsubsection{UI}
+\begin{enumerate}
+\item UI Mockups for Menu and Inventory
+\end{enumerate}
+\subsubsection{Alpha Sorting}
+\begin{enumerate}
+\item Alpha Sorting Mechanism
+\end{enumerate}
+\subsubsection{Room Generation}
+\begin{enumerate}
+\item Item, Character, Prop, Furniture Population System
+\end{enumerate}
+\subsubsection{Loading Scenarios}
+\begin{enumerate}
+\item Generic Multiple Scenario Loader
+\item JSon to C++ Loader
+\item Scenario Management System
+\end{enumerate}
+
+%////////////////////////////////////////////%
+
+\subsection{Engine}
+\subsubsection{Input}
+\begin{enumerate}
+\item Generic Control Mapping System
+\end{enumerate}
+\subsubsection{UI Layout and Optimization}
+\begin{enumerate}
+\item Generic Layout System
+\end{enumerate}
+\subsubsection{Transform Hierarcy}
+\begin{enumerate}
+\item Transform Class
+\end{enumerate}
+\subsubsection{Mesh Interface}
+\begin{enumerate}
+\item Vertex Buffer Object
+\item Vertex Array Object
+\item Index Buffer Object
+\end{enumerate}
+\subsubsection{File Loading and Processing}
+\begin{enumerate}
+\item OBJ File Loader and Parser
+\item JSON File Loader and Parser
+\end{enumerate}
+\subsubsection{Audio}
+\begin{enumerate}
+\item Basic Audio Playback System
+\end{enumerate}
+\subsubsection{Text}
+\begin{enumerate}
+\item Font Loading System
+\end{enumerate}
+\subsubsection{Lighting Model}
+\begin{enumerate}
+\item Lighting Model Shader
+\item Omni-Light
+\item Lambert Material
+\end{enumerate}
+\subsubsection{FBOs Frame Buffer}
+\begin{enumerate}
+\item Generic Frame Buffer Class
+\end{enumerate}
+\subsubsection{Cameras}
+\begin{enumerate}
+\item Perspective Camera
+\item Orthographic Camera
+\end{enumerate}
+\subsubsection{Animation: Easing}
+\begin{enumerate}
+\item Port of Penner Easing Equations
+\end{enumerate}
+\subsubsection{Node System}
+\begin{enumerate}
+\item Node Loadable
+\item Node Resource
+\item Node Shadable 
+\end{enumerate}
+\subsubsection{Entity}
+\begin{enumerate}
+\item Child Transform System
+\end{enumerate}
+\subsubsection{Scenario}
+\begin{enumerate}
+\item Node Content
+\end{enumerate}
+\subsubsection{Particle System}
+\begin{enumerate}
+\item Base Particle System
+\end{enumerate}
+\subsubsection{Game}
+\begin{enumerate}
+\item Scene Manager
+\end{enumerate}
+\subsubsection{SWEET}
+\begin{enumerate}
+\item Time Step
+\end{enumerate}
+\subsubsection{Sprite}
+\begin{enumerate}
+\item Base Sprite Class
+\item Sprite Sheet Animation
+\end{enumerate}
+\subsubsection{Z-Fighting}
+\begin{enumerate}
+\item Polygon Offset Shader
+\end{enumerate}
+\subsubsection{Shader Component System}
+\begin{enumerate}
+\item Text Shader Component
+\item Alpha Shader Component
+\item Depth Shader Component
+\item HSV Shader COmponent
+\item Model View Projection Shader Component
+\item Phong Shader Component
+\item Text Shader Component
+\item Tint Shader Component
+\item Blinn Shader Component
+\item Indexed Texture Shader Component
+\item Shadow Shader Component
+\item Diffuse Shader Component
+\item Normals Shader Component
+\item Component Shader System
+\end{enumerate}
+\subsubsection{Physics: Generic Physics Node}
+\begin{enumerate}
+\item Generic Physics Node
+\end{enumerate}
+\subsubsection{Physics: 2D - Box2D}
+\begin{enumerate}
+\item Node Box2D Body
+\end{enumerate}
+\subsubsection{Physics: 3D - Bullet}
+\begin{enumerate}
+\item Node Bullet Body
+\end{enumerate}
+\subsubsection{Physics: Collision and Raycasting}
+\begin{enumerate}
+\item 2D Collision
+\item 3D Collision
+\item Raycasting
+\end{enumerate}
+\subsubsection{Entity: Scene}
+\begin{enumerate}
+\item Camera Management System
+\end{enumerate}
+\subsubsection{Entity: Mesh Entity}
+\begin{enumerate}
+\item Base Mesh Entity
+\item Mesh Rendering System
+\end{enumerate}
+
+%////////////////////////////////////////////%
+
+\subsection{Web Services}
+\subsubsection{Room Specification}
+\begin{enumerate}
+\item Room Specification System
+\end{enumerate}
+\subsubsection{Character Editor}
+\begin{enumerate} 
+\item Base Character States Editor
+\item Base Character Builder
+\item Joint Positioning System
+\end{enumerate}
+\subsubsection{Components}
+\begin{enumerate} 
+\item Component Uploader
+\end{enumerate}
+
+%--------------------------------------------%
+
+\n{Work Package 3: November}
+\subsection{Game}
+\subsubsection{Assets}
+\begin{enumerate}
+\item 20 Sets of Character Designs
+\item 4 Sets of Bed Components
+\item 4 Sets of Dresser/Drawers
+\item 4 Sets of Cupboards/Bookshelves
+\item 10 Props
+\item 2 Song
+\item Footstep Sound Effects
+\item Collision Sound Effects
+\item Cheering Sound Effects
+\item Booing Sound Effects
+\end{enumerate}
+\subsubsection{Item Generation}
+\begin{enumerate}
+\item Generic Drink Specification System
+\end{enumerate}
+\subsubsection{Prop Generation}
+\begin{enumerate}
+\item Twist Deformer
+\end{enumerate}
+\subsubsection{Procedural Character Generation}
+\begin{enumerate}
+\item Basic Procedural Character Generator
+\end{enumerate}
+\subsubsection{Procedural Furniture Generation}
+\begin{enumerate}
+\item Bathroom and Kitchen Furniture Generator
+\end{enumerate}
+\subsubsection{AI}
+\begin{enumerate}
+\item Basic Behavior System
+\end{enumerate}
+\subsubsection{Character Interaction}
+\begin{enumerate}
+\item Thought Bubble Display
+\item Friendship Point System
+\end{enumerate}
+\subsubsection{Character Interaction - Following}
+\begin{enumerate}
+\item Basic Follow Mechanic
+\end{enumerate}
+\subsubsection{Character Interaction - Yelling}
+\begin{enumerate}
+\item Functional Prototype of Yelling Game
+\end{enumerate}
+\subsubsection{Item Interaction}
+\begin{enumerate}
+\item Item User Interface
+\item Status Effects
+\end{enumerate}
+\subsubsection{UI}
+\begin{enumerate}
+\item Context Sensitive Cursor System
+\item Basic Menu UI
+\item Basic Inventory UI
+\end{enumerate}
+\subsubsection{Room Generation}
+\begin{enumerate}
+\item Door Travel System
+\end{enumerate}
+\subsubsection{File Sharing/Network}
+\begin{enumerate}
+\item Base File Syncing System
+\end{enumerate}
+\subsubsection{Character Animation}
+\begin{enumerate}
+\item Prototype Animations
+\end{enumerate}
+\subsubsection{Inventory System}
+\begin{enumerate}
+\item Complete Inventory Sytem
+\end{enumerate}
+\subsubsection{Loading Scenarios}
+\begin{enumerate}
+\item Complete Multiple Scenario Loader
+\end{enumerate}
+\subsubsection{Rendering}
+\begin{enumerate}
+\item Item State Rendering System
+\end{enumerate}
+\subsubsection{Status and Stats Effects}
+\begin{enumerate}
+\item Status and Stats Management System 
+\end{enumerate}
+\subsubsection{Saves}
+\begin{enumerate}
+\item Local Save System
+\end{enumerate}
+
+%////////////////////////////////////////////%
+
+\subsection{Engine}
+\subsubsection{Shaders}
+\begin{enumerate}
+\item SSAO Shader
+\end{enumerate}
+\subsubsection{Audio}
+\begin{enumerate}
+\item Positional Audio System
+\item Streaming Audio System
+\end{enumerate}
+\subsubsection{Text}
+\begin{enumerate}
+\item Optimized Text Rendering System
+\item Text Layout System
+\end{enumerate}
+\subsubsection{Lighting Model}
+\begin{enumerate}
+\item Directional Light
+\item Blinn Material
+\item Phong Material
+\end{enumerate}
+\subsubsection{FBOs Frame Buffer}
+\begin{enumerate}
+\item Render Surface
+\end{enumerate}
+\subsubsection{Node System}
+\begin{enumerate}
+\item Node Child
+\item Node Transform
+\end{enumerate}
+\subsubsection{Scenario}
+\begin{enumerate}
+\item Node Content
+\item Trigger Class
+\item Asset Class
+\item Character Class
+\item Dialogue Class
+\item Conversation Class
+\item Scenario Iterator
+\end{enumerate}
+\subsubsection{Animation: IK}
+\begin{enumerate}
+\item Joint Class
+\item Bone Class
+\item Animation Rig Class
+\end{enumerate}
+\subsubsection{Animation: Tweens and Keyframes}
+\begin{enumerate}
+\item Tweened Animation System
+\end{enumerate}
+\subsubsection{Entity: Scene}
+\begin{enumerate}
+\item Light Management System
+\end{enumerate}
+
+
+%////////////////////////////////////////////%
+
+\subsection{Web Services}
+\subsubsection{Room Specification}
+\begin{enumerate}
+\item Room Content Specification System
+\end{enumerate} 
+\subsubsection{Components}
+\begin{enumerate}
+\item Component Tagging System
+\item Component Browsing System
+\end{enumerate}
+\subsubsection{File Syncing}
+\begin{enumerate}
+\item File Syncing System
+\end{enumerate}
+
+%--------------------------------------------%
+
+\n{Work Package 4 : December}
+\subsection{Game}
+\subsubsection{Assets}
+\begin{enumerate}
+\item 10 Sets of Character Designs
+\item 4 Sets of Trees
+\item 4 Sets of Couch Components
+\item 4 Sets of Wall Hangings
+\item 10 Props
+\end{enumerate}
+\subsubsection{Prop Generation}
+\begin{enumerate}
+\item Flare Deformer
+\end{enumerate}
+\subsubsection{Procedural Character Generation}
+\begin{enumerate}
+\item Final Procedural Character Generator
+\end{enumerate}
+\subsubsection{Procedural Furniture Generation}
+\begin{enumerate}
+\item Bed Generator
+\item Dresser and Drawers Generator
+\item Cupboard and Bookshelf Generator 
+\end{enumerate}
+\subsubsection{AI}
+\begin{enumerate}
+\item Final Behavior System
+\end{enumerate}
+\subsubsection{Narrative Content}
+\begin{enumerate}
+\item Second Draft of Script
+\end{enumerate}
+\subsubsection{Character Interaction - Conversations}
+\begin{enumerate}
+\item Final Conversation System
+\end{enumerate}
+\subsubsection{Character Interaction - Following}
+\begin{enumerate}
+\item Finalized Follow Mechanic
+\end{enumerate}
+\subsubsection{Character Interaction - Yelling}
+\begin{enumerate}
+\item Finalized Yelling Mechanic
+\end{enumerate}
+\subsubsection{UI}
+\begin{enumerate}
+\item Final Menu UI
+\item Final Inventory UI
+\item Basic Yelling Mechanic UI
+\item Basic Conversation UI
+\end{enumerate}
+\subsubsection{Character Animation}
+\begin{enumerate}
+\item Finalized Character Animations
+\end{enumerate}
+\subsubsection{Scripted Scenes}
+\begin{enumerate}
+\item Scripted Scene System
+\end{enumerate}
+\subsubsection{Inventory System}
+\begin{enumerate}
+\item Item Interaction System
+\item Item Tracker
+\end{enumerate}
+\subsubsection{Coolness Points}
+\begin{enumerate}
+\item Coolness Points System
+\end{enumerate}
+
+%////////////////////////////////////////////%
+
+\subsection{Engine}
+\subsubsection{UI Layout and Optimization}
+\begin{enumerate}
+\item Linear and Horizontal Layout System
+\end{enumerate}
+
+%////////////////////////////////////////////%
+
+%\subsection{Web Services}
+
+
+%--------------------------------------------%
+
+\n{Work Package 5: January}
+\subsection{Game}
+\subsubsection{Assets}
+\begin{enumerate}
+\item 15 Character Designs
+\item 15 Redesigned Characters to Fit Component Model
+\item 3D Model of Inter-Dimensional Room
+\item 2 Song
+\item Drinking Sound Effects
+\item Eating Sound Effects
+\item Talking Sound Effects
+\item Interface Sound Effects
+\item Sci-fi Sound Effects
+\end{enumerate}
+\subsubsection{Procedural Furniture Generation}
+\begin{enumerate}
+\item Foliage Procedural Generator
+\item Couch Procedural Generator
+\item Wall Hanging Procedural Generator
+\end{enumerate}
+\subsubsection{Narrative Content}
+\begin{enumerate}
+\item Finalized Intro
+\end{enumerate}
+\subsubsection{UI}
+\begin{enumerate}
+\item Finalized Yelling Mechanic UI
+\item Finalized Conversation UI
+\end{enumerate}
+\subsubsection{File Sharing/Network}
+\begin{enumerate}
+\item Online Accounts
+\end{enumerate}
+\subsubsection{Emotes}
+\begin{enumerate}
+\item Basic Emotes
+\end{enumerate}
+\subsubsection{Saves}
+\begin{enumerate}
+\item Online Cloud Saves
+\end{enumerate}
+\subsubsection{Scripted Scenes}
+\begin{enumerate}
+\item Scripted Intro Scene
+\end{enumerate}
+%////////////////////////////////////////////%
+
+\subsection{Web Services}
+\subsubsection{UI and Styling}
+\begin{enumerate}
+\item Finalized UI
+\end{enumerate}
+
+
+%--------------------------------------------%
+
+\n{Work Package 6 : February}
+\subsection{Game}
+\subsubsection{Assets}
+\begin{enumerate}
+\item 20 Character Designs
+\item 20 Redesigned Characters to Fit Component Model
+\item Portrait Omar Room Components
+\item 4 Sets of Fridge Components
+\item 4 Sets of Stove Components
+\item 4 Sets of Hanging Light Fixture Components
+\item Hedge Maze
+\item 10 props
+\item Prop Specific Sound Effects
+\item 2 Songs
+\end{enumerate}
+\subsubsection{Procedural Furniture Generation}
+\begin{enumerate}
+\item Fridge Generator
+\item Stove Generator
+\item Hanging Light Generator
+\end{enumerate}
+\subsubsection{Narrative Content}
+\begin{enumerate}
+\item Finalized Main Story Line for Middle Act
+\item Finalized Main Story Line for Final Act
+\item Rough Side Quests
+\end{enumerate}
+\subsubsection{Audio Visual Ties - Visual Distortion}
+\begin{enumerate}
+\item Visual Distortion Shaders
+\end{enumerate}
+\subsubsection{Loading Screen}
+\begin{enumerate}
+\item Loading Screen Animation
+\end{enumerate}
+\subsubsection{Emotes}
+\begin{enumerate}
+\item Finalized Emotes
+\end{enumerate}
+\subsubsection{Menu Options}
+\begin{enumerate}
+\item Variable Screen Resolution Mechanic
+\end{enumerate}
+\subsubsection{Scripted Scenes}
+\begin{enumerate}
+\item Scripted Middle Act Story Sequences
+\end{enumerate}
+\subsubsection{Promotional Website}
+\begin{enumerate}
+\item Promotional Website
+\end{enumerate}
+
+%--------------------------------------------%
+
+\n{Work Package 7 : March}
+\subsection{Game}
+\subsubsection{Assets}
+\begin{enumerate}
+\item 20 Character Designs
+\item 20 Redesigned Characters to Fit Component Model
+\item 4 Sets of Fire Place Components
+\item 4 Sets of Trunk Components
+\item 4 Sets of Wash and Dryer Components
+\item 10 props
+\item Prop Specific Sound Effects
+\item 2 Songs
+\end{enumerate}
+\subsubsection{Procedural Furniture Generation}
+\begin{enumerate}
+\item Fire Place Generator
+\item Trunk Generator
+\item Washer Dryer Generator
+\end{enumerate}
+\subsubsection{Narrative Content}
+\begin{enumerate}
+\item Finalized Side Quest Story Lines
+\end{enumerate}
+\subsubsection{Menu Options}
+\begin{enumerate}
+\item Categorized Volume Modifier
+\item Screen Selector
+\end{enumerate}
+\subsubsection{Audio}
+\begin{enumerate}
+\item Procedural Audio Generator
+\end{enumerate}
+
+%--------------------------------------------%
+
+\n{Work Package 8}
+\subsection{Game}
+\subsubsection{Assets}
+\begin{enumerate}
+\item Game Posters
+\item Presenation Props (Dixie Cups, Balloons)
+\item Presentation Slides
+\item Posters Giving Context to Development
+\item Team T-Shirts
+\item 3D Print Outs mold
+\item Candy in Heart Shapes
+\end{enumerate}
+\subsubsection{Narrative Content}
+\begin{enumerate}
+\item Additional Dialog
+\end{enumerate}
