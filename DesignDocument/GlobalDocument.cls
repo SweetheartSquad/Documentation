@@ -50,6 +50,10 @@
 \setlist{nosep}
 \setlist[description]{format=\normalfont\bfseries\addcolon}
 
+%custom footnote size
+\renewcommand{\footnotesize}{\tiny}
+
+
 % for alternating page backgrounds
 \RequirePackage{everypage}
 \RequirePackage{intcalc}
