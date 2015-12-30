@@ -1,5 +1,5 @@
 \section{Character Interactions}
-While exploring, the player may focus on an NPC by looking at them from within a certain distance. This will present the player with three options: Talk, Recruit, and Yell. These can be seen in Figure~\ref{fig:UI_npc_talk}.
+While exploring, the player may focus on an NPC by looking at them from within a certain distance. This will present the player with two options: Talk and Yell. These can be seen in Figure~\ref{fig:UI_npc_talk}.
 
 \subsection{Talk: Conversation}
 \label{sec:conversation}
@@ -25,12 +25,6 @@ The second type of conversation triggers when the focused NPC is in a \textbf{no
   \caption{Characters reacting to talk interactions}
 \end{figure}
 
-\subsection{Recruit: Squads and Followers}
-Once they player has become friends with an NPC, they may be recruited into the player's squad. As the player progresses through \ourgame{}, they will have the ability to make friends by building up a relationship with NPCs and completing quests for them.
-
-Friends may be recruited and will provide the player with an extra life during yelling contests. If and when this extra life is lost, the friend will also be lost and leave the player's squad.
-
-
 \subsection{Yell: Yelling Contests}
 \label{sec:yelling_contest}
 
@@ -41,28 +35,37 @@ When an NPC is in \textbf{insult} mode, they will bombard the player with contin
 After each battle, the player loses a little bit of their \textbf{voice}. As the player loses more of their voice, they will have less time to complete their insults in the yelling contest. The player can heal themselves by drinking beverages they find around the party. Implementing this limitation adds an extra level of strategy to the yelling contests, and requires the player to be mindful of how they use the Yell option.
 
 \begin{figure}[H]
-  \centering\begin{subfigure}{.33\textwidth}
+  \centering\begin{subfigure}{.44\textwidth}
     \centering
     \includegraphics[width=.9\linewidth]{images/UI_yelling_defense}
-    \caption{NPC in control - player must attempt to interject at highlighted pauses}
+    \caption{NPC in control - player attempts to interject at highlighted pauses}
     \label{fig:yelling_contest_a}
   \end{subfigure}%
-  \begin{subfigure}{.33\textwidth}
+  \begin{subfigure}{.44\textwidth}
     \centering
     \includegraphics[width=.9\linewidth]{images/UI_yelling_interrupt}
     \caption{Successful interjection by player}
     \label{fig:yelling_contest_b}
-  \end{subfigure}%
-  \begin{subfigure}{.33\textwidth}
+  \end{subfigure}
+  
+  \begin{subfigure}{.44\textwidth}
     \centering
     \includegraphics[width=.9\linewidth]{images/UI_yelling_offense}
-    \caption{Player in control - player must choose insults instead of compliments while maintaining the rhythm}
+    \caption{Player in control - player chooses insults instead of compliments while maintaining the rhythm}
     \label{fig:yelling_contest_c}
-  \end{subfigure}%
+  \end{subfigure} %
+	\begin{subfigure}{.44\textwidth}
+	  \centering
+	  \includegraphics[width=.9\linewidth]{images/UI_yelling_lifelost}
+	  \caption{Player with a lost life}
+	  \label{fig:yelling_contest_c}
+	\end{subfigure}%
   \caption{Yelling Contest mockups}
   \label{fig:yelling_contest}
 \end{figure}
 
+\subsubsection{Squads and Followers}
+In \ourgame{}, the player can have a squad of NPCs who act as lives during Yelling Contests. These lives are represented by portraits of each NPC in the squad, found in the top-left corner of the screen. The player can recruit NPCs into their squad by completing certain quests. If the player loses the round, the portrait of an NPC will be crossed out to show that they have been used up. If the player loses a round when all member of their squad have been used, they will lose the contest. Upon starting a new yelling contest, any squad members incapacitated in previous matches will be usable again. When the player travels to a different dimension, their squad will become empty.
 
 \subsubsection{D.I.S.S.}
 In addition to the player's voice, each character in \ourgame{} will have four primary statistics which affect their performance in yelling contests. Together, these form the D.I.S.S. system. When in yelling contests, the statistics of the active participants will heavily influence the player's ability to win.
