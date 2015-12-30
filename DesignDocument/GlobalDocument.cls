@@ -53,6 +53,9 @@
 %custom footnote size
 \renewcommand{\footnotesize}{\tiny}
 
+% make cross-references clickable in order to make the document easier to read
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[all]{hypcap}
 
 % for alternating page backgrounds
 \RequirePackage{everypage}
