@@ -77,10 +77,10 @@ All objects in a room will be a part of a hierarchy. For example, dining chairs 
 
 After the placement of all required room items of the bundle, additional side characters and items required for a scenario will be generated and added to the room using the same placement method as above to ensure there are no collisions or conflicts between characters, items, and furniture.
 
-Once all the rooms have been created, they will then be connected to each other to allow traversal through each room in the map. Each of these connections will be represented in-game by a door item, which may be interacted with by the player in order to move between the different rooms in a layout. Examples of what a house map may look like can be seen in  Figure~\ref{fig:house_map_example}
+Once all the rooms have been created, they will then be connected to each other to allow traversal through each room in the map. Each of these connections will be represented in-game by a door item, which may be interacted with by the player in order to move between the different rooms in a layout. Examples of what a house map may look like can be seen in  Figure~\ref{fig:house_map_example}.
 
 \begin{figure}[htb]
-	\centering
+	\centering %
 	\begin{subfigure}{.45\textwidth}
 		\centering
 		\includegraphics[width=.9\linewidth]{images/RoomGeneration_HouseMapExample1}
@@ -88,15 +88,9 @@ Once all the rooms have been created, they will then be connected to each other 
 	\begin{subfigure}{.45\textwidth}
 		\centering
 		\includegraphics[width=.9\linewidth]{images/RoomGeneration_HouseMapExample2}
-	\end{subfigure}%
+	\end{subfigure}
 	 \caption{Two examples of a generated house map and the connections between rooms}
 	 \label{fig:house_map_example}
-\end{figure}
-
-\begin{figure}[htb]
-	\centering\includegraphics[width=.5\linewidth]{images/RoomGeneration_IncompleteHouseMapExample}
-	\caption{Example of an incomplete house map}
-	\label{fig:house_map_incomplete}
 \end{figure}
 
 \clearpage
