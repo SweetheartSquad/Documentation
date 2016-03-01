@@ -1,0 +1,420 @@
+\documentclass{sigchi}
+
+\newcommand{\inlinequote}[1]{\textit{``#1''}}
+
+% Use this command to override the default ACM copyright statement
+% (e.g. for preprints).  Consult the conference website for the
+% camera-ready copyright statement.
+
+%% HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP --
+%% Please note you need to make sure the copy for your specific
+%% license is used here!
+% \toappear{
+% Permission to make digital or hard copies of all or part of this work
+% for personal or classroom use is granted without fee provided that
+% copies are not made or distributed for profit or commercial advantage
+% and that copies bear this notice and the full citation on the first
+% page. Copyrights for components of this work owned by others than ACM
+% must be honored. Abstracting with credit is permitted. To copy
+% otherwise, or republish, to post on servers or to redistribute to
+% lists, requires prior specific permission and/or a fee. Request
+% permissions from \href{mailto:Permissions@acm.org}{Permissions@acm.org}. \\
+% \emph{CHI '16},  May 07--12, 2016, San Jose, CA, USA \\
+% ACM xxx-x-xxxx-xxxx-x/xx/xx\ldots \$15.00 \\
+% DOI: \url{http://dx.doi.org/xx.xxxx/xxxxxxx.xxxxxxx}
+% }
+
+% Arabic page numbers for submission.  Remove this line to eliminate
+% page numbers for the camera ready copy
+% \pagenumbering{arabic}
+
+% Load basic packages
+\usepackage{balance}       % to better equalize the last page
+\usepackage{graphics}      % for EPS, load graphicx instead 
+\usepackage[T1]{fontenc}   % for umlauts and other diaeresis
+\usepackage{txfonts}
+\usepackage{mathptmx}
+\usepackage[pdflang={en-US},pdftex]{hyperref}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{pdfpages}
+
+% Some optional stuff you might like/need.
+\usepackage{microtype}        % Improved Tracking and Kerning
+% \usepackage[all]{hypcap}    % Fixes bug in hyperref caption linking
+\usepackage{ccicons}          % Cite your images correctly!
+% \usepackage[utf8]{inputenc} % for a UTF8 editor only
+
+% If you want to use todo notes, marginpars etc. during creation of
+% your draft document, you have to enable the "chi_draft" option for
+% the document class. To do this, change the very first line to:
+% "\documentclass[chi_draft]{sigchi}". You can then place todo notes
+% by using the "\todo{...}"  command. Make sure to disable the draft
+% option again before submitting your final document.
+\usepackage{todonotes}
+
+% Paper metadata (use plain text, for PDF inclusion and later
+% re-using, if desired).  Use \emtpyauthor when submitting for review
+% so you remain anonymous.
+\def\plaintitle{Salon de Fr\'{e}Fr\'{e}: A VR + ASMR Experience}
+\def\plainauthor{Ryan Bluth, Michael Hetman, Sean LeBlanc,
+  Kiera Lundberg, Emma Thurlow, Catherine Wong}
+\def\emptyauthor{}
+\def\plainkeywords{Virtual Reality; VR; Virtual Environments; Autonomous Sensory Meridian Response; ASMR; Presence; Immersion; Head-Mounted Display; HMD; Flow State; Treatment; Therapy}{}
+\def\plaingeneralterms{Documentation, Standardization}
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{
+    \def\UrlFont{\sf}
+  }{
+    \def\UrlFont{\small\bf\ttfamily}
+  }}
+\makeatother
+\urlstyle{leo}
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, to give it a
+% fighting chance of not being over-written, since its job is to
+% redefine many LaTeX commands.
+\definecolor{linkColor}{RGB}{6,125,233}
+\hypersetup{%
+  pdftitle={\plaintitle},
+% Use \plainauthor for final version.
+%  pdfauthor={\plainauthor},
+  pdfauthor={\emptyauthor},
+  pdfkeywords={\plainkeywords},
+  pdfdisplaydoctitle=true, % For Accessibility
+  bookmarksnumbered,
+  pdfstartview={FitH},
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=linkColor,
+  breaklinks=true,
+  hypertexnames=false
+}
+
+% create a shortcut to typeset table headings
+% \newcommand\tabhead[1]{\small\textbf{#1}}
+
+% End of preamble. Here it comes the document.
+\begin{document}
+
+\title{\plaintitle}
+
+\numberofauthors{3}
+\author{%
+  \alignauthor{Ryan Bluth\\
+    \email{ryan.bluth@carleton.ca}}\\
+  \alignauthor{Michael Hetman\\
+    \email{michael.hetman@carleton.ca}}\\
+  \alignauthor{Sean LeBlanc\\
+    \email{sean.leblanc@carleton.ca}}\\
+  \alignauthor{Kiera Lundberg\\
+    \email{kiera.lundberg@carleton.ca}}\\
+  \alignauthor{Emma Thurlow\\
+    \email{emma.thurlow@carleton.ca}}\\
+  \alignauthor{Cartherine Wong\\
+    \email{catherine.wong@carleton.ca}}\\
+}
+
+\maketitle
+
+\begin{abstract}
+We will build a multimedia experience which combines VR with ASMR and plan to compare users' experiences with the VR system against an audio-only system. We expect to see higher levels of relaxation as a result of the increased immersion/presence offered by VR.
+\end{abstract}
+
+\keywords{\plainkeywords}
+
+\category{H.5.1}{Multimedia Information Systems: Artificial, augmented, and virtual realities}{}{}
+
+\section{Introduction}
+
+\subsection{Project Overview}
+
+The topic of interest for this project is Autonomous Sensory Meridian Response, commonly known as ASMR, which is a \inlinequote{sensory phenomenon, in which individuals experience a tingling, static-like sensation across the scalp, back of the neck and at times further areas in response to specific triggering audio and visual stimuli}~\cite{barratt2015autonomous}. Although ASMR can occur as a result of virtually any stimulus, there is an emerging trend of ASMR content uploaded to YouTube, with one of the most popular channels garnering nearly 200 million views since their first video was uploaded four years ago~\cite{anon.gentlewhispering}. These videos are meant to lull viewers into relaxed states by incorporating specific audio stimuli, including whispering, tapping, brushing, and other sounds, ideally recorded using binaural microphones for increased immersion.
+
+\begin{figure}[htb]
+\centering
+  \includegraphics[width=0.9\columnwidth]{figures/google-trends}
+  \caption{The popularity of ASMR searches has been rising steadily over the past four years. Data Source: Google Trends (\url{www.google.com/trends/}).}~\label{fig:google-trends}
+\end{figure}
+
+We plan to explore whether the immersion, presence, and/or interactivity of a virtual reality system affects viewers' experience with media designed to evoke ASMR. This exploration will be achieved through the use of a custom-developed ASMR experience, an Oculus Rift\footnote{DK2 headset}, and a pair of high quality headphones\footnote{Grado SR80e headphones}.
+
+The ASMR experience that we intend to create is one wherein the participant's avatar receives a virtual salon makeover. It will consist of a makeup artist, shown in proxy as a roughly animated character silhouette, applying makeup to the participant's avatar. True to the format of ASMR videos, the artist will move around and speak as they go about their tasks. The artist's speech will be a pre-recorded mono track and positional audio will be used to place it relative to the participant.
+
+\begin{figure}[htb]
+\centering
+  \includegraphics[width=0.9\columnwidth]{figures/layout}
+  \caption{Mockup of the salon layout and the makeup artist's motion path.}~\label{fig:layout}
+\end{figure}
+
+At certain points, the artist will offer participants a selection of products. A selection can be made by through head-tracking: by maintaining eye contact with the choice for a set time (see
+Figure~\ref{fig:selection}). Choices made will cosmetically affect the avatar displayed at the experience's conclusion.
+
+\begin{figure}[htb]
+\centering
+  \includegraphics[width=0.9\columnwidth]{figures/selection}
+  \caption{Mockup of the selection method which uses the center of the screen as a cursor position.}~\label{fig:selection}
+\end{figure}
+
+\subsection{User Study}
+
+To evaluate the experience, a comparative study will be performed in which participants are exposed to two variations of the experience: one will be the VR experience exactly as developed, and the other will lack visual stimuli and interaction in order to isolate audio, the component most closely associated with the YouTube ASMR format\footnote{During interactive elements in which a question is posed to the participant, the audio will continue without any user input. Both versions will include some questions in this format (e.g. \inlinequote{How was your day?}) to avoid interference with study results.}. The test will use a within-subjects design, as individual differences would be a significant source of error for something as subjective as ASMR.
+
+We hypothesize that the addition of visual stimuli and interaction with the system will further immerse the participant in the ASMR experience. As 98\% of individuals searching for ASMR videos have indicated that they do so for relaxation~\cite{barratt2015autonomous}, we will be evaluating the participant's sense of relaxation. This will be measured through surveys and possible physiological indicators (e.g. heart rate, respiratory rate) during or after the experience. We expect to observe higher satisfaction with the experience as a result of these factors than with passive audio alone. We believe this will open up the ASMR video-producing community to a new form of experience unlike those found on YouTube.
+
+\subsection{Future Work}
+
+A possible extension of this experience would be to have the test administrator brush the participant's face with actual makeup brushes in-sync with the virtual brushes. As we intend to primarily evaluate the visual and interactive elements, this idea was excluded from this proposal. We hypothesize that this haptic stimuli on its own could be capable of eliciting sensations similar to ASMR (which would interfere with our study)~\cite{hall1897psychology}, and so we leave this for future works to consider.
+
+\subsection{Experience Outline}
+
+\begin{enumerate}
+\item{The participant is seated and puts on the equipment}
+\item{A makeup artist enters the salon and introduces herself}
+\item{The artist asks participants to select a colour for their makeup}
+\begin{itemize}
+\item{VR: Participants are presented with a palette and make a selection}
+\end{itemize}
+\item{The artist circles participants, brushing their face and whispering quietly about what she's doing, occasionally complimenting the participant}
+\item{Participants are informed that the makeup is complete }
+\item{The artist instructs participants to turn and look at their reflection in a mirror she's holding}
+\begin{itemize}
+\item{VR: Participants see their avatar in a mirror, re-textured based on earlier selections}
+\end{itemize}
+\end{enumerate}
+
+\section{Related Work}
+
+\subsection{Introduction to Autonomous Sensory Meridian Response}
+Autonomous Sensory Meridian Response, or ASMR, is the tingling sensation across the scalp and back of the neck, caused by specific audio and visual stimuli \cite{barratt2015autonomous}. To experience ASMR, many users watch videos, often involving personal attention or grooming role-play \cite{andersen2015now,barratt2015autonomous} with a female host \cite{andersen2015now}, designed to elicit the phenomenon. Various types of stimuli can be used within a video to evoke the desired response\cite{barratt2015autonomous}. When surveying those that experienced ASMR in order to learn which stimuli was triggering, it was found that whispering, personal attention, crisp sounds, and slow movements could cause the response. Whispering was the most common among participants, affecting 75\% \cite{barratt2015autonomous}. To increase the sensation, users may change their environment by dimming the lights or using headphones \cite{begman2015}. For our project, we will be recording similar audio stimuli to those listed above, and utilizing high-fidelity headphones for the best experience. Since an HMD will be used, dimming the lights is unnecessary.
+
+Apart from eliciting a tingling sensation, ASMR is able to put users into a state similar to flow state, \inlinequote{the state of intense focus and diminished awareness of the passage of time that is often associated with optimal performance} \cite{barratt2015autonomous}. During their research, Barratt and Davis observed that this state of concentration was improved with more ASMR triggers \cite{barratt2015autonomous}. ASMR is valued for its calming effects \cite{barratt2015autonomous}. When polling users, 98\% of people strongly agreed that they use ASMR videos for relaxation, and 70\% use it for stress relief \cite{barratt2015autonomous}. Some believe in its effects so much that they promote ASMR as a treatment for stress-related conditions such as anxiety\cite{andersen2015now,begman2015}.
+
+Unfortunately for those who use ASMR, these effects can be lost over long-time usage \cite{andersen2015now}. In this situation, users often turn to more immersive experiences that use binaural sound and 3D microphones \cite{andersen2015now}. It is believed that this adds to the experience’s intimacy, encouraging the response \cite{andersen2015now}. For our project, we hope to determine whether the increased level of immersion of our choice of display will amplify the sensations provided by ASMR.
+
+\subsection{Virtual Reality Input Methods}
+There are various methods which developers can use to allow for interaction with virtual worlds. In a 2008 study, when comparing mouse and gaze pointing methods, participants perceived gaze as faster but less accurate than mouse pointing \cite{mateo2008gaze}. Discomfort is a drawback of gaze pointing, especially if users must keep their heads still for a long time \cite{mateo2008gaze}. We believe that the gaze method will work well for our project as users will not be asked to complete tasks requiring accuracy or holding a position for a long time.
+
+\subsection{The Effects of Virtual Reality}
+Like real life environments, virtual environments can cause emotional reactions in users. During a 2007 experiment, it was found that when placed into a relaxation or anxiety inducing environment, participants showed signs of either relaxation or anxiety \cite{riva2007affective}. It was also shown that a relaxing VR experience can increase feelings of quietness and happiness while reducing anger, sadness and anxiety \cite{riva2007affective}. This suggests that virtual environments can be designed to arouse an emotional response, and that users are directly engaged with the effects of the experience \cite{riva2007affective,wiederhold2006evaluation}. 
+It was also found that the level of presence\footnote{\inlinequote{ the \inlinequote{sense of being there} or the \inlinequote{feeling of being in a world that exists outside the self.}}\cite{riva2007affective}} felt by participants was greater in relaxing and anxious environments than in neutral ones, and that the greatest feeling of presence was achieved in the relaxing environment \cite{riva2007affective}. During a literature review relating to presence in virtual environments, it was found that a participant's sense of presence is influenced by the attributes of the VR platform the features of the environment itself, and the individual user’s characteristics \cite{nash2000review}.
+
+VR has also been seen as an alternative way to administer therapy, which could help people in overcoming anxiety and stress-related conditions. In various studies, it has been found that compared to traditional therapy, individuals enjoyed VR therapy more, leading to an increase in motivation to complete treatment \cite{kizony2003adapting,morel2015advantages}. VR therapy also has the benefit of current equipment being affordable, allowing participants to engage in sessions in their own homes \cite{morel2015advantages}. When researching the viability of VR therapy, a follow-up survey of those who suffered from anxiety found that there was no significant difference in the level of anxiety felt between participants of VR and traditional therapy \cite{safir2011virtual}.
+
+VR and ASMR have the shared attribute of inducing relaxation and are both often used for therapeutic purposes. We hope that by combining these two relaxing mediums users will be able to achieve a higher level of presence, which will increase the perception of intimacy ASMR users desire, leading to an increase in its effects.
+
+\subsection{Testing Methods}
+To collect data on subjective topics, questionnaires are a useful tool. During Riva's experiment on the link between presence and emotions in multiple virtual environments, questionnaires were used to evaluate mood before and after the experience including Visual Analogue Scale (VAS), Positive and Negative Affect Schedule (PANAS), and State Trait Anxiety Inventory (STAI). The VAS required participants to indicate how they feel at a specific moment in time regarding their level of happiness, anger, surprise, disgust, anxiety and quietness. The PANAS uses a list of 20 adjectives that describe 10 positive and 10 negative emotions. Participants must associate a magnitude on a scale of 1-5 for each emotion at a given moment. The STAI measures the level of anxiety participants feel on a scale of 0-3. The \inlinequote{State} version of this questionnaire asks participants how they feel at a given moment, while the \inlinequote{Trait} version asks for their general feelings. These questionnaires were provided to participants before and after testing to compare their baseline emotional state against the effects of the environment. Two additional questionnaires, the UCL Presence Questionnaire, and the Independent Television Company Sense of Presence Inventory (ITC-SOPI) were also given to participants after each stage in order to assess their presence. For the UCL Presence Questionnaire, subjects were asked to answer using a 7-point Likert scale for the following questions:
+\begin{enumerate}
+	\item{\inlinequote{Rate your sense of being in the virtual environment.}}
+	\item{\inlinequote{To what extent were there times during the experience when the virtual environment was reality for you?.}}
+	\item{\inlinequote{When you think back to the experience, do you think of the virtual environment more as images that you saw or more 	as somewhere that you visited?}}
+\end{enumerate}
+The ITC-SOPI was used to measure different dimensions of presence, such as sense of physical space, engagement, ecological validity, and negative effects. The questionnaire is divided into two parts. The first consists of six items used to measure a participant's experience after the test has concluded, and the second consists of 38 items used to measure the participants experience during the test. Each is scored using a 5-point Likert scale.
+
+Riva and her team also asked participants questions rated using a 10-point scale, while they were within the virtual environment. To measure their emotional status, participants were asked to what extent they felt sad, happy, anxious, and relaxed at any given moment. To measure presence, participants were asked if they felt as if they were in the virtual environment and whether that environment was a real place they were visiting.
+To reduce errors as a result of their within-subjects design, every participant was required to test each environment, with the sequence of environments being randomized \cite{riva2007affective}.
+
+For objective measurements on the emotional state of participants, physiological measures, such as heart-rate, can be taken. During a 2006 study on the effects of relaxation techniques and heart rate variability, it was found that guided relaxation decreased the participant's heart rate\cite{sarang2006effects}. This shows a correlation between an individual's level of relaxation, which cannot directly be measured, and their heart rate.
+
+To gather information on \inlinequote{the prevalence of particular features of ASMR, when and why individuals engage in ASMR, and the relation of ASMR to other known phenomenon}, Barratt and Davis collected information on a participant's viewing habits and various facets of their experience using a questionnaire \cite{barratt2015autonomous}. Although this questionnaire is designed for use with those already familiar with ASMR, it could likely be used to assess the experiences of individuals new to the phenomenon. A version of the original questionnaire can be found in Appendix A. 
+
+
+%\subsection{ASMR Definitions}
+%Autonomous Sensory Meridian Response is the tingling sensation across the scalp and back of the neck that is caused by specific audio and visual stimuli. \cite{barratt2015autonomous}
+%ASMR community members claim that the shivers they experience are intense feelings of relaxation that begin in the head and extend to their limbs. \cite{andersen2015now}
+%ASMR is relaxing and pleasurable experience of tingling in the scalp that works its way down the spine caused by sensory triggers. \cite{begman2015}
+
+%\subsection{ASMR Video Situations}
+%Many videos portray role play situations where the viewer is being cared for and often groomed. \cite{barratt2015autonomous}
+%Some ASMR videos are in the form of instructional videos for topics such as massage, spa-treatments, meditation and other forms of self-care. \cite{andersen2015now}
+%Often ASMR videos are performed by a single female speaking softly and in a slow manner. \cite{andersen2015now}
+%Role play situations are commonly used to induce ASMR including situations with dental hygienists, travel agents, and receptionists. \cite{andersen2015now}
+%Video scenarios often imitate the attention and intimacy provided by service industries. \cite{andersen2015now}
+
+%\subsection{ASMR Stimuli}
+%ASMR videos largely feature audio stimuli, including tapping on household items. \cite{barratt2015autonomous}
+%Of those that experienced ASMR, they reported the following triggers: whispering, 75 percent; personal attention, 69 percent; crisp sounds, 64 percent; slow movement, 53 percent; and repetitve tasks, 36 percent. \cite{barratt2015autonomous}
+%Of the 52 percent of people that have a preference for where they watch ASMR videos, many preferred quiet locations and the use of binaural headphones so they could hear a greater depth of sound. \cite{barratt2015autonomous}
+%Many participants indicated that they were triggered watching others perform tasks or having attention paid to them. \cite{barratt2015autonomous}
+%ASMR is also sometimes referred to as the Whisper Community as many ASMR videos are performed in a whisper. \cite{andersen2015now}
+%Common ASMR videos are whispers, rustling paper, finger tapping and crinkling plastic. \cite{andersen2015now}
+%Many ASMR videos focus only on the lips, torso or hands of the performer. This is done to focus the viewer on these body parts in a meditative way. \cite{andersen2015now}
+%Some ASMR videos rely only on audio stimuli and only show the audience a black screen or a static image. \cite{andersen2015now}
+%Some ASMR inducing triggers slow and soft speech, and pages turning.\cite{begman2015}
+%Some methods of inducing ASMR include dimming the lights, and using headphones. \cite{begman2015}
+
+%\subsection{Flow}
+%ASMR shares flow state features including an intense focus and decreased awareness of time passing. Flow state is the state achieved when most productive during an activity. \cite{barratt2015autonomous}
+%Flow was best experienced with more ASMR triggers. \cite{barratt2015autonomous}
+%The behaviour of participants resembled flow state in that they completed precise tasks with confidence and precision. \cite{barratt2015autonomous}
+
+%\subsection{ASMR Uses}
+%Of those polled, 98 percent of people strongly agree that they use ASMR videos for relaxation, while 82 percent use it for sleep and 70 use it for stress. \cite{barratt2015autonomous}
+%While 30 percent of people stated that they viewed ASMR content during spare time with no preference in when they viewed it, 81 percent said that they preferred to watch ASMR videos before bed.  \cite{barratt2015autonomous} This corresponds to the fact that many ASMR viewers watch the videos with the purpose of inducing sleep.
+%Participants felt best when actively engaging with ASMR content, with 80 percent of participants stating the video had an affect on their mood. Even without experiencing the ASMR sensation, 50 percent said that ASMR content had a positive affect on their mood, with only 30 percent stating the tingling sensation was essential. \cite{barratt2015autonomous}
+%Many participants said that they used ASMR to ease symptoms of moderate to severe depression, with a total of 69 percent making this indication. \cite{barratt2015autonomous}
+%ASMR has been promoted as a treatment for stress and insomnia. \cite{andersen2015now}
+%Those who view ASMR content may be predisposing themselves to the shivering experience through the intention since they are seeking out videos for relaxation and pleasure. \cite{andersen2015now}
+%ASMR videos are often advertised as therapy for insomnia and anxiety. \cite{begman2015}
+
+%\subsection{ASMR and Immersion}
+%Individuals can experience ASMR burnout where a given video will no longer trigger the ASMR experience for them. To overcome this, many viewers turn towards more immersive experiences aided by the use of technology. \cite{andersen2015now}
+%An immersive experience indicates that individuals are looking for a more immediate experience that includes interactivity. \cite{andersen2015now}
+
+
+%\subsection{VR}
+%VR is effective in inducing emotions as seen through the indication of anxiety and relaxation when participants were placed in anxiety-inducing or relaxation-inducing environments. \cite{riva2007affective}
+%The feeling of presence is greater in emotional environments, and the emotional state was influenced by the level of presence. \cite{riva2007affective}
+%VR users are directly engaged with the effects of a virtual experience. \cite{wiederhold2006evaluation}
+%VR provides users with a safe place where they are able to explore and act without feeling threatened \cite{riva2005virtual} by dangerous, real, or humiliating consequences \cite{standen2005virtual}. 
+%VR is beneficial for analyses and experimentation due to the fact that virtual environments are controlled and reproducible \cite{morel2015advantages}.
+
+
+%\subsection{VR and Input Methods}
+%When comparing pointing methods of mouse or gaze, participants perceived gaze as faster but less accurate than mouse pointing. Participants were faster and suffered less in accuracy for harder tasks when using gaze pointing methods \cite{mateo2008gaze}. 
+%Discomfort is a serious drawback of gaze pointing especially if it requires users to keep their heads still for a long time \cite{mateo2008gaze}. 
+%According to their study comparing mouse and gaze pointing techniques and mouse button or EMG switch selection, combining gaze pointing and facial EMG has potential to outperform the mouse \cite{mateo2008gaze}.
+
+%\subsection{VR and Immersion}
+%In VR, relaxing experiences increased feelings of quietness and happiness while reducing anger, sadness and anxiety. \cite{riva2007affective}
+%The level of presence felt by participants was greater in relaxing and anxious environments than in neutral ones, with the greatest feeling of presence in the relaxing environment. \cite{riva2007affective} This indicates that emotional environments bring out feelings of presence better than non-emotional ones.
+%A positive correlation was found between positive environment effects and a sense of presence. \cite{riva2007affective}
+%Participants using VR augmented rehabilitation experienced an increase in heart rate and respiratory rate \cite{wiederhold2006evaluation}.
+%The participants sense of presence is influenced by both the attributes of the VR platform as well of the features of the environment itself and the characteristics of the individual user \cite{nash2000review}. 
+
+%\subsection{VR and Therapy}
+%Participants enjoy VR therapy more than traditional forms of therapy which can increase motivation to complete treatment \cite{kizony2003adapting}.
+%Since some VR systems are relatively affordable, rehabilitation can be done at home, which is much more convenient \cite{morel2015advantages}.
+%VR rehab therapy can be fun, which increases participant motivation to complete the therapy session \cite{morel2015advantages}.
+%Using VR to rehabilitate is useful but it is less effective to assess rehabilitation using VR since subjects react differently \cite{morel2015advantages}.
+%In a study comparing Virtual Reality Cognitive Behaviour Therapy against Cognitive Behaviour Therapy and no therapy for the treatment of speaking anxiety, the virtual reality treatment was better than no treatment but not significantly better than traditional therapy \cite{wallach2009virtual}. 
+%The virtual reality therapy had a lower drop out rate of 6 percent than participants that received group therapy which was 18 percent. Those who received normal cognitive therapy had a drop out rate of 12 percent \cite{wallach2009virtual}.
+%A year after the initial study, there was no significant difference in the level of anxiety felt between those who participated in the virtual reality and those that received traditional cognitive therapy. Each group was compared on five anxiety measures which were LSAS fear, LSAS avoidance, SSPS positive, SSPS negative and FNE during three time periods \cite{safir2011virtual}.
+
+%\subsection{VR Limitations}
+%Reaction time data is affected by any level of latency \cite{morel2015advantages}.
+%Reactions within a VR environment are not always the same as they would be in a real world environment \cite{morel2015advantages}.
+%In a study testing reaction times in a real world environment, a real world environment with a see-through HMD and a virtual environment with an HMD, subjects reacted significantly slower in the virtual environment. The delay was fairly consistent and was most likely caused by latency \cite{morel2015advantages}.
+%immersed in a virtual environment \cite{morel2015advantages}.
+
+%\subsection{Testing Methods}
+%Some questionnaires that were used to evaluate mood before and after the virtual experience are Visual Analogue Scale, Positive and Negative Affect Schedule, and State Trait Anxiety Inventory. The Visual Analogue Scale, or VAS, required participants to indicate how they feel at a specific moment in time in regards to their level of happiness, anger, surprise, disgust, anxiety and quietness. Positive and Negative Affect Schedule, or PANAS, uses a list of 20 adjectives that describe 10 positive emotions and 10 negative emotions. Participants must indicate the extent that the feel each of the emotions at a given moment on a scale of 1 to 5. State Trait Anxiety Inventory, or STAI, measures the level of anxiety participants feel on a scale of 0 to 3. The state version asks participants how they feel at a given moment, while the trait version asks for their general feelings. \cite{riva2007affective}
+
+%\section{Sample stuff}
+
+%\begin{table}[htb]
+  %\centering
+ % \begin{tabular}{l r r r}
+    % \toprule
+ %   & & \multicolumn{2}{c}{\small{\textbf{Test Conditions}}} \\
+ %   \cmidrule(r){3-4}
+ %   {\small\textit{Name}}
+ %   & {\small \textit{First}}
+%      & {\small \textit{Second}}
+ %   & {\small \textit{Final}} \\
+  %  \midrule
+  %  Marsden & 223.0 & 44 & 432,321 \\
+  %  Nass & 22.2 & 16 & 234,333 \\
+  %  Borriello & 22.9 & 11 & 93,123 \\
+  %  Karat & 34.9 & 2200 & 103,322 \\
+    % \bottomrule
+%  \end{tabular}
+%  \caption{Table captions should be placed below the table. We
+%    recommend table lines be 1 point, 25\% black. Minimize use of
+%    table grid lines.}~\label{tab:table1}
+%\end{table}
+
+
+%\begin{figure*}[htb]
+%  \centering
+%  \includegraphics[width=1.75\columnwidth]{figures/map}
+%  \caption{In this image, the map maximizes use of space. You can make
+%    figures as wide as you need, up to a maximum of the full width of
+%    both columns. Note that \LaTeX\ tends to render large figures on a
+%    dedicated page. Image: \ccbynd~ayman on
+%    Flickr.}~\label{fig:figure2}
+%\end{figure*}
+
+% Balancing columns in a ref list is a bit of a pain because you
+% either use a hack like flushend or balance, or manually insert
+% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
+% multicols doesn't work because we're already in two-column mode,
+% and flushend isn't awesome, so I choose balance.  See this
+% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
+%
+% Note that in a perfect world balance wants to be in the first
+% column of the last page.
+%
+% If balance doesn't work for you, you can remove that and
+% hard-code a column break into the bbl file right before you
+% submit:
+%
+% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
+% in-an-ieee-paper-if-using-bibtex
+%
+% Or, just remove \balance and give up on balancing the last page.
+%
+\balance{}
+
+% BALANCE COLUMNS
+\balance{}
+
+% REFERENCES FORMAT
+% References must be the same font size as other body text.
+\bibliographystyle{SIGCHI-Reference-Format}
+\bibliography{sample}
+
+\appendix
+\section{Appendix A - Test Materials}
+\subsection{UCL Presence Questionnaire}
+For the UCL Presence Questionnaire, subjects were asked to answer using a 1-7 point Likert scale for the following questions:
+\begin{enumerate}
+	\item{\inlinequote{Rate your sense of being in the virtual environment.}}
+	\item{\inlinequote{To what extent were there times during the experience when the virtual environment was reality for you?.}}
+	\item{\inlinequote{When you think back to the experience, do you think of the virtual environment more as images that you saw or more	as somewhere that you visited?}}
+	\end{enumerate}
+
+\subsection{Affective Interactions Using Virtual Reality - Emotional Status and Presence Questionnaire}
+To measure their emotional status, the following questions were asked:
+\begin{enumerate}
+	\item{\inlinequote{To what extent do you feel sad at this moment?}}
+	\item{\inlinequote{To what extent do you feel happy at this	moment?}}
+	\item{\inlinequote{To what extent do you feel anxious at this moment?}}
+	\item{\inlinequote{To what extent do you feel relaxed at this moment?}}
+\end{enumerate}
+
+To measure presence, the following questions were asked:
+\begin{enumerate}
+	\item{\inlinequote{Do you feel you are here, in [the environment portrayed with virtual reality]?}}
+	\item{\inlinequote{Do you feel this [virtual environment] is real, is it a place you are visiting?}}
+\end{enumerate}
+
+\subsection{Positive and Negative Affect Schedule}
+\includegraphics[width=0.5\textwidth]{questionnaires/ThePANAS.png}
+
+\subsection{ASMR Questionnaire}
+\includepdf[pages={1-}]{questionnaires/ASMR_Questions.pdf}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
