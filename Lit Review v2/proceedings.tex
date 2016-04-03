@@ -136,9 +136,7 @@
 \maketitle
 
 \begin{abstract}
-In this study, we examined whether the effects of autonomous sensory meridian response (ASMR) can be triggered with more frequency or effectiveness through the addition of immersive VR. Ten users participated in the study (one user was excluded from the data analysis) and were subjected to an AB test. One of the tests exposed users to a traditional ASMR audio experience while the other used this same audio in addition to an interactive virtual reality system. Based on data gained via a user questionnaire it was determined that an interactive virtual reality experience does not increase the frequency of ASMR. In fact, the data suggests that virtual reality distracts the user from the audio source and hinders the ASMR experience.
-
-We will build a multimedia experience which combines VR with ASMR and plan to compare users' experiences with the VR system against an audio-only system. We expect to see higher levels of relaxation as a result of the increased immersion/presence offered by VR.
+We examined whether the phenomenon of autonomous sensory meridian response (ASMR) could be triggered with the addition of immersive virtual reality by comparing trials between audio-only and VR-assisted experiences. It was determined that an interactive virtual reality experience does not increase the frequency of ASMR, and potentially distracts the user from triggering audio sources.
 \end{abstract}
 
 \keywords{\plainkeywords}
@@ -157,19 +155,12 @@ The topic of interest for this project is Autonomous Sensory Meridian Response, 
   \caption{The popularity of ASMR searches has been rising steadily over the past four years. Data Source: Google Trends (\url{www.google.com/trends/}).}~\label{fig:google-trends}
 \end{figure}
 
-We plan to explore whether the immersion, presence, and/or interactivity of a virtual reality system affects viewers' experience with media designed to evoke ASMR. This exploration will be achieved through the use of a custom-developed ASMR experience, an Oculus Rift\footnote{DK2 headset}, and a pair of high quality headphones\footnote{Grado SR80e headphones}.
+We explored whether the immersion, presence, and/or interactivity of a virtual reality system affects viewers' experience with media designed to evoke ASMR. This exploration was achieved through the use of standard VR equipment (described in more detail in Apparatus) and a custom-developed ASMR experience.
 
-The ASMR experience that we intend to create is one wherein the participant's avatar receives a virtual salon makeover. It will consist of a makeup artist, shown in proxy as a roughly animated character silhouette, applying makeup to the participant's avatar. True to the format of ASMR videos, the artist will move around and speak as they go about their tasks. The artist's speech will be a pre-recorded mono track and positional audio will be used to place it relative to the participant.
+The ASMR experience that we created is one wherein the participant's avatar receives a virtual salon makeover. It consisted of a makeup artist, shown as a roughly animated 3D character, applying makeup to the participant's avatar. True to the format of ASMR videos, the artist moved around and spoke as they went about their tasks. The artist's speech was a pre-recorded mono track and positional audio was used to place it relative to the participant.
 
-\begin{figure}[htb]
-\centering
-  \includegraphics[width=0.9\columnwidth]{figures/layout}
-  \caption{Mockup of the salon layout and the makeup artist's motion path.}
-  \label{fig:layout}
-\end{figure}
-
-At certain points, the artist will offer participants a selection of products. A selection can be made by through head-tracking: by maintaining eye contact with the choice for a set time (see
-Figure~\ref{fig:selection}). Choices made will cosmetically affect the avatar displayed at the experience's conclusion.
+At certain points, the artist offered participants a selection of colours. A selection could be made by through head-tracking: by maintaining eye contact with the choice for a set time (see
+Figure~\ref{fig:selection}). Choices made cosmetically affected the avatar displayed during the experience.
 
 \begin{figure}[htb]
 \centering
@@ -180,68 +171,48 @@ Figure~\ref{fig:selection}). Choices made will cosmetically affect the avatar di
 
 \subsection{User Study}
 
-To evaluate the experience, a comparative study will be performed in which participants are exposed to two variations of the experience: one will be the VR experience exactly as developed, and the other will lack visual stimuli and interaction in order to isolate audio, the component most closely associated with the YouTube ASMR format\footnote{During interactive elements in which a question is posed to the participant, the audio will continue without any user input. Both versions will include some questions in this format (e.g. \inlinequote{How was your day?}) to avoid interference with study results.}. The test will use a within-subjects design, as individual differences would be a significant source of error for something as subjective as ASMR.
+To evaluate the experience, a comparative study was performed in which participants were exposed to two variations of the experience: one was the VR experience exactly as developed, and the other lacked visual stimuli and interaction in order to isolate audio, the component most closely associated with the YouTube ASMR format. The test used a within-subjects design, as individual differences would be a significant source of error for something as subjective as ASMR.
 
-We hypothesize that the addition of visual stimuli and interaction with the system will further immerse the participant in the ASMR experience. As 98\% of individuals searching for ASMR videos have indicated that they do so for relaxation~\cite{barratt2015autonomous}, we will be evaluating the participant's sense of relaxation. This will be measured through surveys and possible physiological indicators (e.g. heart rate, respiratory rate) during or after the experience. We expect to observe higher satisfaction with the experience as a result of these factors than with passive audio alone. We believe this will open up the ASMR video-producing community to a new form of experience unlike those found on YouTube.
-
-\subsection{Future Work}
-
-A possible extension of this experience would be to have the test administrator brush the participant's face with actual makeup brushes in-sync with the virtual brushes. As we intend to primarily evaluate the visual and interactive elements, this idea was excluded from this proposal. We hypothesize that this haptic stimuli on its own could be capable of eliciting sensations similar to ASMR (which would interfere with our study)~\cite{hall1897psychology}, and so we leave this for future works to consider.
-
-\subsection{Experience Outline}
-
-\begin{enumerate}
-\item{The participant is seated and puts on the equipment}
-\item{A makeup artist enters the salon and introduces herself}
-\item{The artist asks participants to select a colour for their makeup}
-\begin{itemize}
-\item{VR: Participants are presented with a palette and make a selection}
-\end{itemize}
-\item{The artist circles participants, brushing their face and whispering quietly about what she's doing, occasionally complimenting the participant}
-\item{Participants are informed that the makeup is complete }
-\item{The artist instructs participants to turn and look at their reflection in a mirror she's holding}
-\begin{itemize}
-\item{VR: Participants see their avatar in a mirror, re-textured based on earlier selections}
-\end{itemize}
-\end{enumerate}
+We hypothesized that the addition of visual stimuli and interaction with the system would further immerse the participant in the ASMR experience. As 98\% of individuals searching for ASMR videos have indicated that they do so for relaxation~\cite{barratt2015autonomous}, we evaluated the participant's sense of relaxation. This was measured through surveys and possible physiological indicators before, during and after the experience. We expected to observe higher satisfaction with the experience as a result of these factors than with passive audio alone.
 
 \section{Related Work}
 
 \subsection{Introduction to Autonomous Sensory Meridian Response}
-Autonomous Sensory Meridian Response (ASMR, is the tingling sensation across the scalp and back of the neck, caused by specific audio and visual stimuli~\cite{barratt2015autonomous}. To experience ASMR, many users watch videos, often involving personal attention or grooming role-play \cite{andersen2015now,barratt2015autonomous} with a female host~\cite{andersen2015now} designed to elicit the phenomenon. Various types of stimuli can be used within a video to evoke the desired response~\cite{barratt2015autonomous}. When surveying those that experienced ASMR in order to learn which stimuli was triggering, it was found that whispering, personal attention, crisp sounds, and slow movements could cause the response. Whispering was the most common among participants, affecting 75\% \cite{barratt2015autonomous}. To increase the sensation, users may change their environment by dimming the lights or using headphones~\cite{begman2015}. For our project, we will be recording similar audio stimuli to those listed above, and utilizing high-fidelity headphones for the best experience. Since an HMD will be used, dimming the lights is unnecessary.
+Autonomous Sensory Meridian Response (ASMR, is the tingling sensation across the scalp and back of the neck, caused by specific audio and visual stimuli~\cite{barratt2015autonomous}. To experience ASMR, many users watch videos, often involving personal attention or grooming role-play \cite{andersen2015now,barratt2015autonomous} with a female host~\cite{andersen2015now} designed to elicit the phenomenon. Various types of stimuli can be used within a video to evoke the desired response~\cite{barratt2015autonomous}. When surveying those that experienced ASMR in order to learn which stimuli was triggering, it was found that whispering, personal attention, crisp sounds, and slow movements could cause the response. Whispering was the most common among participants, affecting 75\% \cite{barratt2015autonomous}. To increase the sensation, users may change their environment by dimming the lights or using headphones~\cite{begman2015}. For our project, we recorded similar audio stimuli to those listed above, and utilized high-fidelity headphones for the best experience. Since an HMD was used, dimming the lights was unnecessary.
 
 Apart from eliciting a tingling sensation, ASMR is able to put users into a state similar to flow state, \inlinequote{the state of intense focus and diminished awareness of the passage of time that is often associated with optimal performance}~\cite{barratt2015autonomous}. During their research, Barratt and Davis observed that this state of concentration was improved with more ASMR triggers~\cite{barratt2015autonomous}. ASMR is valued for its calming effects \cite{barratt2015autonomous}; polls indicated that 98\% of users view ASMR videos for relaxation, and 70\% for stress relief~\cite{barratt2015autonomous}. Some believe in its effects enough to promote ASMR as a treatment for stress-related conditions such as anxiety~\cite{andersen2015now,begman2015}.
 
-Unfortunately for those who use ASMR, these effects can be lost over long-time usage~\cite{andersen2015now}. In this situation, users often turn to more immersive experiences that use binaural sound and 3D microphones~\cite{andersen2015now}. It is believed that this adds to the experience's intimacy, heightening the response~\cite{andersen2015now}. We hope to determine whether the increased level of immersion of our choice of display will amplify the sensations provided by ASMR.
+Unfortunately for those who use ASMR, these effects can be lost over long-time usage~\cite{andersen2015now}. In this situation, users often turn to more immersive experiences that use binaural sound and 3D microphones~\cite{andersen2015now}. It is believed that this adds to the experience's intimacy, heightening the response~\cite{andersen2015now}. 
 
 \subsection{Virtual Reality Input Methods}
-In a 2008 study, when comparing mouse and gaze pointing methods, participants perceived gaze as faster but less accurate than mouse pointing~\cite{mateo2008gaze}. Discomfort is a drawback of gaze pointing, especially if users must keep their heads still for a long time~\cite{mateo2008gaze}. We believe that the gaze method will work well for our project, as users will not be asked to complete tasks requiring accuracy or holding a position for a long time.
+In a 2008 study, when comparing mouse and gaze pointing methods, participants perceived gaze as faster but less accurate than mouse pointing~\cite{mateo2008gaze}. Discomfort is a drawback of gaze pointing, especially if users must keep their heads still for a long time~\cite{mateo2008gaze}. We believe that the gaze method worked well for our project, as users were not be asked to complete tasks requiring accuracy or holding a position for a long time.
 
 \subsection{The Effects of Virtual Reality}
 Like real life environments, virtual environments can cause emotional reactions. During a 2007 experiment, it was found that when placed into a relaxation- or anxiety-inducing environment, participants showed signs of either relaxation or anxiety~\cite{riva2007affective}. It was also shown that a relaxing VR experience can increase feelings of quietness and happiness while reducing anger, sadness and anxiety~\cite{riva2007affective}. This suggests that virtual environments can be designed to evoke an emotional response from users~\cite{riva2007affective,wiederhold2006evaluation}. 
+
 It was also found that the level of presence\footnote{\inlinequote{the \inlinequote{sense of being there} or the \inlinequote{feeling of being in a world that exists outside the self.}}~\cite{riva2007affective}} felt by participants was greater in relaxing and anxious environments than in neutral ones, and that the greatest feeling of presence was achieved in the relaxing environment~\cite{riva2007affective}. A previous review of virtual environments found that a participant's sense of presence is influenced by the attributes of the VR platform, the features of the environment itself, and the individuals characteristics~\cite{nash2000review}.
 
 VR has also been seen as an alternative to therapy administration, which could help people in overcoming anxiety and stress-related conditions. It has been found in various studies that individuals enjoy VR therapy more than traditional therapy, leading to an increase in motivation to complete treatment~\cite{kizony2003adapting,morel2015advantages}. VR therapy also has the benefit of current equipment being affordable, allowing participants to engage in sessions in their own homes~\cite{morel2015advantages}. When researching the viability of VR therapy, a follow-up survey of those who suffered from anxiety found that there was no significant difference in the level of anxiety felt between participants of VR and traditional therapy~\cite{safir2011virtual}.
 
-VR and ASMR have the shared capability of inducing relaxation and are both often used for therapeutic purposes. We hope that by combining these two relaxing mediums, users will be able to achieve a higher level of presence, which will increase the perception of intimacy ASMR users desire, leading to an increase in its effects.
+VR and ASMR have the shared capability of inducing relaxation and are both often used for therapeutic purposes. We combined these two relaxing mediums with the hope that users would be able to achieve a higher level of presence, and an increased perception of intimacy leading to an increase the effects of ASMR.
 
 \subsection{Testing Methods}
-To collect data on subjective topics, questionnaires are a useful tool. During Riva's experiment on the link between presence and emotions in multiple virtual environments, questionnaires were used to evaluate mood before and after the experience including Visual Analogue Scale (VAS), Positive and Negative Affect Schedule (PANAS), and State Trait Anxiety Inventory (STAI). The VAS required participants to indicate how they feel at a specific moment in time regarding their level of happiness, anger, surprise, disgust, anxiety and quietness. The PANAS uses a list of 20 adjectives that describe 10 positive and 10 negative emotions which can be viewed in Appendix~\ref{Appendix_A}. Participants must associate a magnitude on a scale of 1-5 for each emotion at a given moment. The STAI measures the level of anxiety participants feel on a scale of 0-3. The \inlinequote{State} version of this questionnaire asks participants how they feel at a given moment, while the \inlinequote{Trait} version asks for their general feelings. These questionnaires were provided to participants before and after testing to compare their baseline emotional state against the effects of the environment. Two additional questionnaires, the UCL Presence Questionnaire, and the Independent Television Company Sense of Presence Inventory (ITC-SOPI) were also given to participants after each stage in order to assess their presence. For the UCL Presence Questionnaire, please see Appendix~\ref{Appendix_A}.
+To collect data on subjective topics, questionnaires are a useful tool. During Riva's experiment on the link between presence and emotions in multiple virtual environments, questionnaires were used to evaluate mood before and after the experience including Visual Analogue Scale (VAS), Positive and Negative Affect Schedule (PANAS), and State Trait Anxiety Inventory (STAI). The VAS required participants to indicate how they feel at a specific moment in time regarding their level of happiness, anger, surprise, disgust, anxiety and quietness. The PANAS uses a list of 20 adjectives that describe 10 positive and 10 negative emotions which can be viewed in Appendix~\ref{appendix:test_materials}. Participants must associate a magnitude on a scale of 1-5 for each emotion at a given moment. The STAI measures the level of anxiety participants feel on a scale of 0-3. The \inlinequote{State} version of this questionnaire asks participants how they feel at a given moment, while the \inlinequote{Trait} version asks for their general feelings. These questionnaires were provided to participants before and after testing to compare their baseline emotional state against the effects of the environment. Two additional questionnaires, the UCL Presence Questionnaire, and the Independent Television Company Sense of Presence Inventory (ITC-SOPI) were also given to participants after each stage in order to assess their presence. For the UCL Presence Questionnaire, please see Appendix~\ref{appendix:test_materials}.
 The ITC-SOPI was used to measure different dimensions of presence, such as sense of physical space, engagement, ecological validity, and negative effects. The questionnaire is divided into two parts. The first consists of six items used to measure a participant's experience after the test has concluded, and the second consists of 38 items used to measure the participants experience during the test. Each is scored using a 5-point Likert scale~\cite{riva2007affective}.
 
-Riva and her team also asked participants questions rated using a 10-point scale, while they were within the virtual environment. To measure their emotional status, participants were asked to what extent they felt sad, happy, anxious, and relaxed at any given moment. To measure presence, participants were asked if they felt as if they were in the virtual environment and whether that environment was a real place they were visiting. To view these questions, please see Appendix~\ref{Appendix_A}.
+Riva and her team also asked participants questions rated using a 10-point scale, while they were within the virtual environment. To measure their emotional status, participants were asked to what extent they felt sad, happy, anxious, and relaxed at any given moment. To measure presence, participants were asked if they felt as if they were in the virtual environment and whether that environment was a real place they were visiting. To view these questions, please see Appendix~\ref{appendix:test_materials}.
 To reduce errors as a result of their within-subjects design, every participant was required to test each environment, with the sequence of environments being randomized~\cite{riva2007affective}.
 
 For objective measurements on the emotional state of participants, physiological measures, such as heart-rate, can be taken. During a 2006 study on the effects of relaxation techniques and heart rate variability, it was found that guided relaxation decreased the participant's heart rate~\cite{sarang2006effects}. This shows a correlation between an individual's level of relaxation, which cannot directly be measured, and their heart rate.
 
-To gather information on \inlinequote{the prevalence of particular features of ASMR, when and why individuals engage in ASMR, and the relation of ASMR to other known phenomenon}, Barratt and Davis collected information on a participant's viewing habits and various facets of their experience using a questionnaire~\cite{barratt2015autonomous}. Although this questionnaire is designed for use with those already familiar with ASMR, it could likely be used to assess the experiences of individuals new to the phenomenon. A version of the original questionnaire can be found in Appendix~\ref{Appendix_A}. 
+To gather information on \inlinequote{the prevalence of particular features of ASMR, when and why individuals engage in ASMR, and the relation of ASMR to other known phenomenon}, Barratt and Davis collected information on a participant's viewing habits and various facets of their experience using a questionnaire~\cite{barratt2015autonomous}. Although this questionnaire is designed for use with those already familiar with ASMR, it could likely be used to assess the experiences of individuals new to the phenomenon. A version of the original questionnaire can be found in Appendix~\ref{appendix:test_materials}. 
 
 
 
 \section{Methodology}
 
 \subsection{Participants}
-The experiment was completed by 10 participants. The average age was 21.67 years old with a standard deviation of 1.41. Of the 10 participants, 6 were male, 3 were female, and 1 identifies as another gender. All of the participants except for 1 had previous experience using VR. Three participants had previously experienced ASMR, listing their triggers as whispering and personal attention, whispering and crisp sounds, and crisp sounds respectively. None of the participants indicated that they watch ASMR videos in their daily life.
+The test experiment was completed by 10 participants. The average age was 21.67 years old with a standard deviation of 1.41. Of the 10 participants, 6 were male, 3 were female, and 1 identifies as an other gender. All of the participants except for 1 had previous experience using VR. Three participants had previously experienced ASMR, listing their triggers as whispering and personal attention, whispering and crisp sounds, and crisp sounds respectively. None of the participants indicated that they watch ASMR videos in their daily life.
 
 \begin{figure}[htb]
 \centering
@@ -257,7 +228,7 @@ Of the 10 participants, one was excluded from the study as they indicated they h
 \subsection{Apparatus}
 \begin{itemize}
 \item{Oculus Rift DK2 (note: only the HMD's tracking is used; the external tracker which provides positional data is ignored for the purposes of this study)}
-\item{S-Tengine2 game engine + "Salon de Fr\'{e}Fr\'{e}" application
+\item{S-Tengine2 game engine + \textit{Salon de Fr\'{e}Fr\'{e}} application
 \begin{itemize}
 \item{60 FPS}
 \item{Approx. 30 ms latency}
@@ -275,12 +246,19 @@ Of the 10 participants, one was excluded from the study as they indicated they h
 }
 \end{itemize}
 \subsubsection{Virtual Environment}
-To enhance the relaxing effects of ASMR, the virtual environment used in the experiment was also designed to cause a similar emotional response. This was done by creating an open space with high ceilings and large windows. Additionally, the environment used a cool, pastel colour palette. 
+To enhance the relaxing effects of ASMR, the virtual environment used in the experiment was also designed to induce a similar relaxation response. This was done by creating an open space with high ceilings and large windows. Additionally, the environment used a calming pastel colour palette. 
+
+\begin{figure}[htb]
+\centering
+  \includegraphics[width=0.9\columnwidth]{figures/game}
+  \caption{Screenshot from \textit{Salon de Fr\'{e}Fr\'{e}}.}
+  \label{fig:game}
+\end{figure}
 
 \subsection{Procedure}
-Participants were read a script, included in the Appendix, that informed them about the ASMR phenomenon, as well as the procedure they would have to follow during the test. They completed a pre-screening questionnaire to provide background information that may affect the test, and were asked to sign a consent form.
+A script (included in Appendix~\ref{appendix:script}) was read to the participants that informed them about the ASMR phenomenon, as well as the procedure they would have to follow during the test. They completed a pre-screening questionnaire to provide background information, and were asked to sign a consent form.
 
-Participants were then asked to complete the two procedures outlined below. The order of these tests was alternated between participants to account for any confounding variables caused by completing tests in the same order.
+Participants were then asked to complete the two procedures outlined below. The order of these tests was alternated between participants to account for any confounding variables such as learning and comfort with the equipment.
 
 \begin{figure}[htb]
 \centering
@@ -325,7 +303,7 @@ The experiment took an average of 20 minutes to complete per participant.
 
 
 \section{Design}
-For this experiment, the effects that an immersive VR experience had on the autonomous sensory meridian response were measured. The experiment had two independent variables which were:
+This study is primarily concerned with an immersive VR experience's potential for affecting autonomous sensory meridian response. Two independent variables were identified and controlled during the study:
 \begin{itemize}
 \item{Positionally tracked stereo audio-visual vs. mono audio}
 \item{Interactive head tracking vs. no head tracking (input/interactivity)}
@@ -341,20 +319,25 @@ The results were measured as three dependent variables:
 \item{Change in heart rate}
 \end{itemize}
 
-Participants were asked to indicate whether they have experienced ASMR prior to the test, and if they have to list any triggers. They were then asked to indicate whether they experienced tingles following each test, and if they did, what they felt triggered these tingles.
-
-The level of relaxation felt was measured by asking participants for their mood prior to testing and asking for their mood following each test, if they felt as though their mood had changed. Change in heart rate was used as an objective, physiological way of measuring relaxation.
+Participants were asked to indicate whether they have experienced ASMR prior to the test, and if they have to list any triggers. They were then asked to indicate whether they experienced tingles following each test, and if they did, what they felt triggered these tingles. The level of relaxation felt was measured by asking participants for their mood prior to testing and asking for their mood following each test, if they felt as though their mood had changed. Change in heart rate was used as an objective, physiological way of measuring relaxation.
 
 \subsection{Accommodations for Confounding Variables}
 Before conducting testing, some confounding variables and ways to avoid them were identified. It is understood that ASMR is subjective, and as such data was taken from two trials that were completed by the same subject, rather than results between subjects. 
 
 A heart rate sensor was used to measure relaxation. In order to understand if a participant's level of relaxation changed during the experiment, results were compared to a resting heart rate taken while in a relaxed state.
 
-In addition to providing control over all of the independent variables, the apparatus introduces a number of unwanted variables. The HMD itself is a fairly large and bulky wearable display with many cables which can cause discomfort. In order to ensure that these variables did not affect the outcome of the study, the audio-only trial required participants to wear the HMD despite the lack of visuals or head-tracking.
+In addition to providing control over all of the independent variables, the apparatus introduces a number of unwanted variables. The HMD itself is a fairly large and bulky wearable display with many cables which can cause discomfort. In order to ensure that these variables did not affect the outcome of the study, the audio-only trial also required participants to wear the HMD despite the lack of visuals or head-tracking.
 
-Similarly, the HMD and visuals used in the VR trial allowed for an interactive experience, and the user was able to actually select colours when asked by the makeup artist. During the audio-only trial, this form of interaction was impossible. In order to compensate for the discrepancy, additional questions were included in the makeup artist's script which cannot be answered in either the VR or audio-only trial.
+Similarly, the HMD and visuals used in the VR trial allowed for an interactive experience, and the user was able to actually select colours when asked by the makeup artist. During the audio-only trial, this form of interaction was impossible. In order to compensate for the discrepancy, additional questions were included in the makeup artist's script which cannot be answered in either the VR or audio-only trial; e.g. \inlinequote{What is your name?}
 
-To minimise the possibility of breaks in presence as a result of outside noise or interactions, the trials were conducted in an environment which was as neutral as possible, an anechoic chamber, with only one observer present. The observer only interacted with the participants prior to and after the trials, and remained silent as they were conducted.
+To minimise the possibility of breaks in presence as a result of outside noise or interactions, the trials were conducted in an environment which was as neutral as possible, an anechoic chamber, with only one observer present. This can be seen in Figure~\ref{fig:soundroom}. The observer only interacted with the participants prior to and after the trials, and remained silent as they were conducted.
+
+\begin{figure}[htb]
+\centering
+  \includegraphics[width=0.9\columnwidth]{figures/soundroom}
+  \caption{Location used for tesing.}
+  \label{fig:soundroom}
+\end{figure}
 
 
 
@@ -405,14 +388,14 @@ It can be seen that two participants indicated a positive mood change, one indic
 
 \addplot 
 	coordinates {
-	(VR,2)
-	(Audio,2)
+	(VR,2)-+(1.65,2.65)
+	(Audio,2)-+(1.65,2.65)
 	};
 
 \addplot 
 	coordinates {
-	(VR,1)
-	(Audio,2)
+	(VR,1)-+(1.65,2.65)
+	(Audio,2)-+(1.65,2.65)
 	};
 
 \legend{Experience with ASMR, No experience with ASMR}
@@ -422,9 +405,9 @@ It can be seen that two participants indicated a positive mood change, one indic
 \label{fig:experienced_asmr}
 \end{figure}
 
-Two participants indicated that they have experienced ASMR previous to this experiment. As seen in Figure~\ref{fig:experienced_asmr}, both of these participants experienced ASMR during the immersive VR and audio-only tests, possibly indicating they are more predisposed to experiencing ASMR. 
+Two participants indicated that they had prior ASMR experience. As seen in Figure~\ref{fig:experienced_asmr}, both of these participants experienced ASMR during the immersive VR and audio-only tests, possibly indicating they are more predisposed to experiencing ASMR. 
 
-Two participants that have never previously experienced ASMR experienced it during testing. Both participants indicated they felt tingles during the audio-only experience, and one participant indicated they also felt it during the immersive VR experience. Overall, four participants experienced ASMR during the audio-only experience, and three felt it during the immersive VR experience. There is a slight indication that the audio-only system is better at inducing ASMR in participants that the immersive VR system with a p value of blank.
+Two participants that have never previously experienced ASMR experienced it during testing. Both participants indicated they felt tingles during the audio-only experience, and one participant indicated they also felt it during the immersive VR experience. Overall, four participants experienced ASMR during the audio-only experience, and three felt it during the immersive VR experience. There is a slight indication that the audio-only system is better at inducing ASMR in participants that the immersive VR system, however, the P value for this assertion was calculated as > 0.65 for a 2x2 contingency table, far outside the realm of statistically significant results.
 
 \begin{table*}[htb]
   \centering
@@ -443,7 +426,7 @@ Two participants that have never previously experienced ASMR experienced it duri
 
 As seen in Table~\ref{tab:triggers}, the two participants that had previously experienced ASMR indicated that their triggers were whispering and personal attention, and whispering and crisp sounds respectively. Whispering was a common trigger for participants, with all four participants indicating it caused their ASMR in the audio-only experience, and two participants listing it as a trigger during the immersive VR experience. Crisp sounds were indicated as a trigger in the audio-only experience by two participants, and by one participant in the immersive VR experience. One participant listed the location audio as being a trigger in both tests, even though the audio-only experience was presented in mono audio.
 
-
+In addition to the questionnaires, objective heart-rate data was recorded for each participant during the testing. However, this data was excluded from the study as it was inconclusive. We believe further studies would benefit from the inclusion of heart-rate data, as there were extensive hardware issues throughout the trials which likely affected the results.
 
 %discussion
 Although the results of the two trials were fairly similar, the audio-only experience proved to be marginally more effective at evoking ASMR. Because of this, we rejected our original hypothesis; the data clearly shows that the addition of VR did not enhance the effects of ASMR, and in fact made it worse. This may be because when compared to the darkness of the audio-only trial, the immersive VR experience provided more stimulation and distracted participants from the audio, which was the most common trigger indicated in the surveys.
@@ -503,6 +486,12 @@ Unfortunately, the niche aspect of ASMR made finding people who actively seek ou
 
 \section{Conclusion}
 In conclusion virtual reality does not enhance the ASMR experience. Participants indicated that audio queues were the main trigger of tingles. The inclusion of interactive visual stimuli seems to have distracted users from the audio and has thus reduced the frequency of ASMR being triggered.
+
+
+\subsection{Future Work}
+
+A possible extension of this experience would be to have the test administrator brush the participant's face with actual makeup brushes in-sync with the virtual brushes. As we intended to primarily evaluate the visual and interactive elements, this idea was excluded from the study. We hypothesize that the haptic stimuli on its own could be capable of eliciting sensations similar to ASMR which would interfere with our own study~\cite{hall1897psychology}, and so we leave this for future works to consider.
+
 
 %\section{Sample stuff}
 
@@ -568,6 +557,8 @@ In conclusion virtual reality does not enhance the ASMR experience. Participants
 \bibliographystyle{SIGCHI-Reference-Format}
 \bibliography{sample}
 
+\clearpage
+\nobalance
 \appendix
 
 
