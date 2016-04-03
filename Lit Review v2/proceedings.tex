@@ -381,27 +381,27 @@ It can be seen that two participants indicated a positive mood change, one indic
 	legend style={at={(0.5,-0.2)},
 		anchor=north,legend columns=-1},
 	ybar,
-	ymin=0,ymax=3,
+	ymin=-3,ymax=5,
 	symbolic x coords={VR, Audio},
 	xtick = data,
 ]
 
-\addplot 
+\addplot +[error bars/.cd,y dir=both,y explicit]
 	coordinates {
-	(VR,2)-+(1.65,2.65)
-	(Audio,2)-+(1.65,2.65)
+	(VR,2)+-(1.65,2.65)
+	(Audio,2)+-(1.65,2.65)
 	};
 
-\addplot 
+\addplot +[error bars/.cd,y dir=both,y explicit]
 	coordinates {
-	(VR,1)-+(1.65,2.65)
-	(Audio,2)-+(1.65,2.65)
+	(VR,1)+-(1.65,2.65)
+	(Audio,2)+-(1.65,2.65)
 	};
 
 \legend{Experience with ASMR, No experience with ASMR}
 \end{axis}
 \end{tikzpicture}
-\caption{ASMR in Participants.}
+\caption{ASMR triggered in Participants.}
 \label{fig:experienced_asmr}
 \end{figure}
 
@@ -485,7 +485,7 @@ Unfortunately, the niche aspect of ASMR made finding people who actively seek ou
 %\end{figure}
 
 \section{Conclusion}
-In conclusion virtual reality does not enhance the ASMR experience. Participants indicated that audio queues were the main trigger of tingles. The inclusion of interactive visual stimuli seems to have distracted users from the audio and has thus reduced the frequency of ASMR being triggered.
+Although our results were inconclusive, they suggest that virtual reality does not enhance the ASMR experience. Participants indicated that audio cues were the main trigger of tingles. The inclusion of interactive visual stimuli seems to have distracted users from the audio and has thus reduced the frequency of ASMR being triggered.
 
 
 \subsection{Future Work}
