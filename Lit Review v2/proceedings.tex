@@ -32,6 +32,15 @@
 \usepackage{booktabs}
 \usepackage{textcomp}
 \usepackage{pdfpages}
+\usepackage{pgfplots}
+\usepackage{pgf-pie}
+
+
+
+
+
+
+
 
 
 % Some optional stuff you might like/need.
@@ -127,6 +136,8 @@
 \maketitle
 
 \begin{abstract}
+In this study, we examined whether the effects of autonomous sensory meridian response (ASMR) can be triggered with more frequency or effectiveness through the addition of immersive VR. Ten users participated in the study (one user was excluded from the data analysis) and were subjected to an AB test. One of the tests exposed users to a traditional ASMR audio experience while the other used this same audio in addition to an interactive virtual reality system. Based on data gained via a user questionnaire it was determined that an interactive virtual reality experience does not increase the frequency of ASMR. In fact, the data suggests that virtual reality distracts the user from the audio source and hinders the ASMR experience.
+
 We will build a multimedia experience which combines VR with ASMR and plan to compare users' experiences with the VR system against an audio-only system. We expect to see higher levels of relaxation as a result of the increased immersion/presence offered by VR.
 \end{abstract}
 
@@ -153,7 +164,8 @@ The ASMR experience that we intend to create is one wherein the participant's av
 \begin{figure}[htb]
 \centering
   \includegraphics[width=0.9\columnwidth]{figures/layout}
-  \caption{Mockup of the salon layout and the makeup artist's motion path.}~\label{fig:layout}
+  \caption{Mockup of the salon layout and the makeup artist's motion path.}
+  \label{fig:layout}
 \end{figure}
 
 At certain points, the artist will offer participants a selection of products. A selection can be made by through head-tracking: by maintaining eye contact with the choice for a set time (see
@@ -162,7 +174,8 @@ Figure~\ref{fig:selection}). Choices made will cosmetically affect the avatar di
 \begin{figure}[htb]
 \centering
   \includegraphics[width=0.9\columnwidth]{figures/selection}
-  \caption{Mockup of the selection method which uses the center of the screen as a cursor position.}~\label{fig:selection}
+  \caption{Mockup of the selection method which uses the center of the screen as a cursor position.}
+  \label{fig:selection}
 \end{figure}
 
 \subsection{User Study}
@@ -230,6 +243,15 @@ To gather information on \inlinequote{the prevalence of particular features of A
 \subsection{Participants}
 The experiment was completed by 10 participants. The average age was 21.67 years old with a standard deviation of 1.41. Of the 10 participants, 6 were male, 3 were female, and 1 identifies as another gender. All of the participants except for 1 had previous experience using VR. Three participants had previously experienced ASMR, listing their triggers as whispering and personal attention, whispering and crisp sounds, and crisp sounds respectively. None of the participants indicated that they watch ASMR videos in their daily life.
 
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+    \pie{60/Male, 30/Female, 10/Other}
+\end{tikzpicture}
+\caption{Gender of participants.}
+\label{fig:gender}
+\end{figure}
+
 Of the 10 participants, one was excluded from the study as they indicated they had a history of heart problems in the family and suffered from a heart condition.
 
 \subsection{Apparatus}
@@ -238,7 +260,7 @@ Of the 10 participants, one was excluded from the study as they indicated they h
 \item{S-Tengine2 game engine + "Salon de Fr\'{e}Fr\'{e}" application
 \begin{itemize}
 \item{60 FPS}
-\item{~30 ms latency}
+\item{Approx. 30 ms latency}
 \end{itemize}
 }
 \item{Grado SR80e headphones}
@@ -252,17 +274,29 @@ Of the 10 participants, one was excluded from the study as they indicated they h
 \end{itemize}
 }
 \end{itemize}
+\subsubsection{Virtual Environment}
+To enhance the relaxing effects of ASMR, the virtual environment used in the experiment was also designed to cause a similar emotional response. This was done by creating an open space with high ceilings and large windows. Additionally, the environment used a cool, pastel colour palette. 
 
 \subsection{Procedure}
 Participants were read a script, included in the Appendix, that informed them about the ASMR phenomenon, as well as the procedure they would have to follow during the test. They completed a pre-screening questionnaire to provide background information that may affect the test, and were asked to sign a consent form.
 
 Participants were then asked to complete the two procedures outlined below. The order of these tests was alternated between participants to account for any confounding variables caused by completing tests in the same order.
 
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+    \pie{50/VR -> Audio, 50/Audio -> VR}
+\end{tikzpicture}
+\caption{Testing order of participants.}
+\label{fig:testing_order}
+\end{figure}
+
 The experiment took an average of 20 minutes to complete per participant.
 
 \subsubsection{Virtual Reality + Audio}
 \begin{enumerate}
-\item{The participant is seated and puts on the HMD and headphones}
+\item{The participant is seated in an anechoic room and puts on the HMD and headphones with the aid of test moderators}
+\item{The "Salon de Fr\'{e}Fr\'{e}" application is started by the test moderator}
 \item{A makeup artist introduces herself}
 \item{The artist asks participants to select a blush colour}
 \item{Participants are presented with a palette and make a selection by looking at the option they want}
@@ -273,19 +307,202 @@ The experiment took an average of 20 minutes to complete per participant.
 \item{The artist asks participants to select a lipstick colour}
 \item{Participants are presented with a palette and make a selection by looking at the option they want}
 \item{Participants are informed that the makeup is complete and are told to look in the mirror}
-\item{Participants remove HMD}
+\item{Participants remove the HMD and headphones}
 \item{Participants complete a questionnaire}
 \end{enumerate}
 
 \subsubsection{Audio-only}
 \begin{enumerate}
-\item{The participant is seated and puts on the HMD and headphones}
+\item{The participant is seated in an anechoic room and puts on the HMD and headphones with the aid of test moderators}
 \item{An audio file containing the entire experience is played}
-\item{Participants remove HMD}
+\item{Participants remove the HMD and headphones}
 \item{Participants complete a questionnaire}
 \end{enumerate}
 
-\section{}
+
+
+
+
+
+\section{Design}
+For this experiment, the effects that an immersive VR experience had on the autonomous sensory meridian response were measured. The experiment had two independent variables which were:
+\begin{itemize}
+\item{Positionally tracked stereo audio-visual vs. mono audio}
+\item{Interactive head tracking vs. no head tracking (input/interactivity)}
+\end{itemize}
+
+Positionally tracked stereo audio-visuals were used with interactive head tracking in the immersive VR experience, while mono audio was used without any input or interactivity in the audio-only experience.
+
+The results were measured as three dependent variables:
+
+\begin{itemize}
+\item{Subjective level of ASMR felt}
+\item{Subjective level of relaxation felt}
+\item{Change in heart rate}
+\end{itemize}
+
+Participants were asked to indicate whether they have experienced ASMR prior to the test, and if they have to list any triggers. They were then asked to indicate whether they experienced tingles following each test, and if they did, what they felt triggered these tingles.
+
+The level of relaxation felt was measured by asking participants for their mood prior to testing and asking for their mood following each test, if they felt as though their mood had changed. Change in heart rate was used as an objective, physiological way of measuring relaxation.
+
+\subsection{Accommodations for Confounding Variables}
+Before conducting testing, some confounding variables and ways to avoid them were identified. It is understood that ASMR is subjective, and as such data was taken from two trials that were completed by the same subject, rather than results between subjects. 
+
+A heart rate sensor was used to measure relaxation. In order to understand if a participant's level of relaxation changed during the experiment, results were compared to a resting heart rate taken while in a relaxed state.
+
+In addition to providing control over all of the independent variables, the apparatus introduces a number of unwanted variables. The HMD itself is a fairly large and bulky wearable display with many cables which can cause discomfort. In order to ensure that these variables did not affect the outcome of the study, the audio-only trial required participants to wear the HMD despite the lack of visuals or head-tracking.
+
+Similarly, the HMD and visuals used in the VR trial allowed for an interactive experience, and the user was able to actually select colours when asked by the makeup artist. During the audio-only trial, this form of interaction was impossible. In order to compensate for the discrepancy, additional questions were included in the makeup artist's script which cannot be answered in either the VR or audio-only trial.
+
+To minimise the possibility of breaks in presence as a result of outside noise or interactions, the trials were conducted in an environment which was as neutral as possible, an anechoic chamber, with only one observer present. The observer only interacted with the participants prior to and after the trials, and remained silent as they were conducted.
+
+
+
+
+\section{Results \& Discussion}
+
+
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{l l}
+    \toprule\\
+    {\textit{Immersive VR}} & {\textit{Audio-only}}\\
+    \midrule
+    {Neutral to Neutral} & {Neutral to Relaxed} \\
+    Neutral to Neutral & Relaxed to Neutral \\
+    Happy to Neutral & Neutral to Neutral \\
+    Happy to Relaxed & Relaxed to Neutral \\
+    Neutral to Neutral & Neutral to Neutral \\
+    Happy to Relaxed & Happy to Happy \\
+    Neutral to Neutral & Neutral to Relaxed \\
+    Neutral to Neutral & Neutral to Neutral \\
+    Relaxed to Relaxed & Relaxed to Relaxed \\
+     \bottomrule
+  \end{tabular}
+  \caption{Mood Change Indicated per Participant.}~\label{tab:mood_change}
+\end{table}
+
+Participant moods were compared between their baseline reading and their indicated mood following the first test, and their indicated mood following the first test and their indicated mood following the second test. These mood changes can be seen in Table~\ref{tab:mood_change}. 
+
+It can be seen that two participants indicated a positive mood change, one indicated a negative mood change, and six participants indicated no perceivable change in mood for both the immersive VR experience and the audio-only experience. Although both tests were able to alter participant moods in a few cases, neither test proved better at affecting mood than the other.
+
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+	x tick label style={
+		/pgf/number format/1000 sep=},
+	xlabel=Trial,
+	ylabel=Experienced ASMR During Trial,
+	enlarge x limits=0.9,
+	legend style={at={(0.5,-0.2)},
+		anchor=north,legend columns=-1},
+	ybar,
+	ymin=0,ymax=3,
+	symbolic x coords={VR, Audio},
+	xtick = data,
+]
+
+\addplot 
+	coordinates {
+	(VR,2)
+	(Audio,2)
+	};
+
+\addplot 
+	coordinates {
+	(VR,1)
+	(Audio,2)
+	};
+
+\legend{Experience with ASMR, No experience with ASMR}
+\end{axis}
+\end{tikzpicture}
+\caption{ASMR in Participants.}
+\label{fig:experienced_asmr}
+\end{figure}
+
+Two participants indicated that they have experienced ASMR previous to this experiment. As seen in Figure~\ref{fig:experienced_asmr}, both of these participants experienced ASMR during the immersive VR and audio-only tests, possibly indicating they are more predisposed to experiencing ASMR. 
+
+Two participants that have never previously experienced ASMR experienced it during testing. Both participants indicated they felt tingles during the audio-only experience, and one participant indicated they also felt it during the immersive VR experience. Overall, four participants experienced ASMR during the audio-only experience, and three felt it during the immersive VR experience. There is a slight indication that the audio-only system is better at inducing ASMR in participants that the immersive VR system with a p value of blank.
+
+\begin{table*}[htb]
+  \centering
+  \begin{tabular}{p{6cm} p{6cm} p{6cm}}
+    \toprule\\
+    {\textit{Previous ASMR triggers}} & {\textit{ASMR Triggers during Immersive VR}} & {\textit{ASMR Triggers during Audio-Only}}\\
+    \midrule
+    Whispering, Personal attention & Whispering & Whispering, Crisp sounds \\
+    No known triggers & Crisp sounds & Whispering \\
+    Whispering, Crisp sounds & Whispering, Positional audio (source behind participant) & Whispering, Illusion of positional audio (top of head)\\
+    No known triggers & No ASMR experienced, Whispering, Crisp sounds\\
+     \bottomrule
+  \end{tabular}
+  \caption{ASMR Triggers.}~\label{tab:triggers}
+\end{table*}
+
+As seen in Table~\ref{tab:triggers}, the two participants that had previously experienced ASMR indicated that their triggers were whispering and personal attention, and whispering and crisp sounds respectively. Whispering was a common trigger for participants, with all four participants indicating it caused their ASMR in the audio-only experience, and two participants listing it as a trigger during the immersive VR experience. Crisp sounds were indicated as a trigger in the audio-only experience by two participants, and by one participant in the immersive VR experience. One participant listed the location audio as being a trigger in both tests, even though the audio-only experience was presented in mono audio.
+
+
+
+%discussion
+Although the results of the two trials were fairly similar, the audio-only experience proved to be marginally more effective at evoking ASMR. Because of this, we rejected our original hypothesis; the data clearly shows that the addition of VR did not enhance the effects of ASMR, and in fact made it worse. This may be because when compared to the darkness of the audio-only trial, the immersive VR experience provided more stimulation and distracted participants from the audio, which was the most common trigger indicated in the surveys.
+
+During the study, comments from a few participants revealed a minor bug with the software rendering, where the mirror displayed to users during the VR trial did not behave as expected. When users rotated their head around the y-axis, their virtual avatar's head rotated in the opposite direction. Although no one indicated this as having a significant effect on their overall experience, it had the potential to cause a break in presence and could bias their survey results in favour of the audio-only trial.
+
+Unfortunately, the niche aspect of ASMR made finding people who actively seek out and enjoy ASMR difficult, and a larger sample which included more people with this trait could provide a more accurate data set.
+
+
+
+%\begin{figure}[htb]
+%\centering
+%\begin{tikzpicture}
+%\begin{axis}[
+%	x tick label style={
+%		/pgf/number format/1000 sep=},
+%	xlabel=Question,
+%	ylabel=Mean Score,
+%	legend style={at={(0.5,-0.2)},
+%		anchor=north,legend columns=-1},
+%	ybar=4pt,
+%	bar width=4pt,
+%]
+%\addplot+[error bars/.cd,y dir=both,y explicit]
+%	coordinates {
+%	(1930,1)+-(0.5,0.5)
+%	(1940,2)
+%	(1950,3)
+%	(1960,4)
+%	(1970,5)
+%	};
+%
+%\addplot 
+%	coordinates {
+%	(1930,5)
+%	(1940,4)
+%	(1950,3)
+%	(1960,2)
+%	(1970,1)
+%	};
+%
+%\addplot 
+%	coordinates {
+%	(1930,1)
+%	(1940,2)
+%	(1950,3)
+%	(1960,4)
+%	(1970,5)
+%	};
+%
+%\legend{Baseline,VR,Audio}
+%\end{axis}
+%\end{tikzpicture}
+%\caption{A bar graph!}
+%\label{fig:bar_graph}
+%\end{figure}
+
+\section{Conclusion}
+In conclusion virtual reality does not enhance the ASMR experience. Participants indicated that audio queues were the main trigger of tingles. The inclusion of interactive visual stimuli seems to have distracted users from the audio and has thus reduced the frequency of ASMR being triggered.
 
 %\section{Sample stuff}
 
@@ -352,7 +569,33 @@ The experiment took an average of 20 minutes to complete per participant.
 \bibliography{sample}
 
 \appendix
-\section{Appendix A - Test Materials}\label{Appendix_A}
+
+
+\section{Appendix A - Script}
+\label{appendix:script}
+\subsection{Introduction Script}
+This study aims to determine whether the effects of ASMR can be triggered with more frequency or effectiveness through the addition of immersive VR. ASMR is the tingling sensation as a result of specific audio and/or visual stimuli. You will be asked to complete two trials of the provided virtual makeover experience, and answer a short questionnaire upon completion.
+
+One trial will contain audio only and one will have both audio and visuals. Once the VR experience commences, please pretend that I am not here and do not talk to me. You may make verbal responses to the make-up artist if you so wish to.
+
+\subsection{Immersive VR Script}
+The makeup artist will ask you to make colour selections during the virtual makeover. To make a selection, look at the option you wish to select until the progress bar is complete. When the make-up artist asks you to look into the mirror, the makeover is complete and you may notify me so I can remove your equipment and you can fill out the survey.
+
+\subsection{Audio only Script}
+We will be asking you to wear the HMD even though there will be nothing playing on it. The audio track will be the same. You will be asked to complete a short survey when the experience ends.
+
+
+
+\section{Appendix B - Questionnaires}
+\label{appendix:questionnaire}
+\includepdf[pages={1-}]{questionnaires/Google_Forms.pdf}
+
+
+
+
+
+\section{Appendix C - Reference Test Materials}
+\label{appendix:test_materials}
 \subsection{UCL Presence Questionnaire}
 For the UCL Presence Questionnaire, subjects were asked to answer using a 1-7 point Likert scale for the following questions:
 \begin{enumerate}
@@ -381,6 +624,7 @@ To measure presence, the following questions were asked:
 
 \subsection{ASMR Questionnaire}
 \includepdf[pages={1-}]{questionnaires/ASMR_Questions.pdf}
+
 
 
 \end{document}
