@@ -26,9 +26,6 @@ The vast majority of characters in the world of \ourgame{} will follow a hierarc
 \label{fig:character_components}
 \end{figure}
 
-\subsubsection{Emotes}
-Characters will make use of 2D emotes in order to supplement various aspects of character interaction. These emotes may be triggered through dialogue, yelling contests, or other character interactions. In \ourgame{}, emotes will be represented by 2D spritesheet animations, which will be placed relative to the character's head. Emotes which are triggered through character interactions will play once and then disappear. Emotes may also be tied to a character's state, in which case they play on a loop indefinitely.
-
 \subsubsection{Animations}
 Animations will be incorporated using IK skeletal rigs. The character components will be attached to these rigs such that the bones can be manipulated using five end-effectors (control points which bone chains try to reach through rotation). The end-effectors included in the skeletal rig will be one which controls the base of the spine to the top of the head, and four which control the character's limbs. In the animation definition file it will be possible to set the position of end effectors to a percentage of their chain length. This will allow animations to work with characters of various sizes.
 
@@ -42,16 +39,9 @@ An IK chain in \ourgame{} will calculate the position and orientation of connect
 Animations will be stored in a JSON file which will contain a reference value for each-end effector position and an array of tween objects. Each tween object will contain the difference in position over a period of time and an interpolation used to define how the position changes during that period of time (e.g. stepped interpolation would cause the end effector to remain in one position, then jump to the next in an instant, whereas linear interpolation would cause the effector to move from one position to the next along the vector which separated them).
 
 \subsection{Room Generation}
-At the start of each playthrough, a layout for \ourgame{}'s environment will be generated procedurally. The room generation algorithm starts by selecting approximately 10 scenarios from the game's database for use in the current playthrough. Once these scenarios have been selected, the various characters, items, and room specifications associated with those scenarios must be generated. Once these have been created, they will be grouped into bundles which may each be mapped to a single room at the end of the generation process. For example: one scenario may be defined such that it includes two characters and two room specifications, one of which is tagged with "bathroom". Each character must be placed in one of the specified rooms. A second scenario may be defined such that it includes a single item which must be placed within a container. A third scenario may be defined such that it includes a room specification with the "kitchen" tag. At this stage in the generation algorithm, two bundles will be created. The first bundle will include one room specification with the "kitchen" tag, one character, a single container, and the item; the second bundle will include a room specification with the "bathroom" tag and the other character. This example is visualized in Figure~\ref{fig:room_bundling}. Notably, two of the three rooms specified in the scenarios were merged, producing more potential interactions between the selected scenarios.
+At the start of each playthrough, a layout for \ourgame{}'s environment will be generated procedurally. The room generation algorithm starts by selecting approximately 10 scenarios from the game's database for use in the current playthrough. Once these scenarios have been selected, the various characters, items, and room specifications associated with those scenarios must be generated.
 
-\begin{figure}[htb]
- \centering\includegraphics[width=.9\linewidth]{images/bundle}
-  \caption{Visualization of room bundling}
-  \label{fig:room_bundling}
-\end{figure}
-
-
-Once the scenario contents have been bundled, the layout of the house may be generated. To achieve this, a grid will be created, and subsections of the grid will be selected to create spaces for individual rooms. The size of the grid and individual rooms will be based on the specifications and required room content in each bundle. Inside each subsection, an image will be generated which represents the shape of the room. The room's walls will be created and placed depending on the contours calculated from the room-layout image's pixels. Examples of this procedural generation system can be seen in Figure~\ref{fig:room_generation_example}
+Once the scenario contents have been created, the layout of the house may be generated. To achieve this, a grid will be created, and subsections of the grid will be selected to create spaces for individual rooms. The size of the grid and individual rooms will be based on the specifications and required room content. Inside each subsection, an image will be generated which represents the shape of the room. The room's walls will be created and placed depending on the contours calculated from the room-layout image's pixels. Examples of this procedural generation system can be seen in Figure~\ref{fig:room_generation_example}
 
 \begin{figure}[htb]
  \centering
@@ -73,9 +63,9 @@ Once the scenario contents have been bundled, the layout of the house may be gen
 
 All objects in a room will be a part of a hierarchy. For example, dining chairs would be parented to a dining table, and a painting would be parented to a wall. To account for this kind of room structure, each room object will have its own list of specifications, which include its bounding box, a tag-based list of possible parents the object can have (e.g. a dining chair can be parented to a dining table), and a list of sides that children can place themselves against (i.e. top, bottom, left, right, front, and back).
 
- All of the bundle's room objects will try to find parents among themselves, which will include characters, items, furniture/props, and the room walls. Once a parent for a room object has been found, the object will try to align itself along one of the parent's sides, and if there is enough space, the object will position and orient itself beside the parent. If a parent is not found, a random position will be calculated that exists inside the room. A collision check will then be against the rest of the objects in the room, as well as against the room walls.
+ All of the room objects will try to find parents among themselves, which will include characters, items, furniture/props, and the room walls. Once a parent for a room object has been found, the object will try to align itself along one of the parent's sides, and if there is enough space, the object will position and orient itself beside the parent. If a parent is not found, a random position will be calculated that exists inside the room. A collision check will then be against the rest of the objects in the room, as well as against the room walls.
 
-After the placement of all required room items of the bundle, additional side characters and items required for a scenario will be generated and added to the room using the same placement method as above to ensure there are no collisions or conflicts between characters, items, and furniture.
+After the placement of all required room items, additional side characters and items required for a scenario will be generated and added to the room using the same placement method as above to ensure there are no collisions or conflicts between characters, items, and furniture.
 
 Once all the rooms have been created, they will then be connected to each other to allow traversal through each room in the map. Each of these connections will be represented in-game by a door item, which may be interacted with by the player in order to move between the different rooms in a layout. Examples of what a house map may look like can be seen in  Figure~\ref{fig:house_map_example}.
 
@@ -109,4 +99,4 @@ In order to increase the variability of environments that the user will experien
 The game world will be populated with various 3D props. These props will be physics objects, and will be able to collide with the player, as well as other 3D props and environment objects. The props that are included in the world, and their placement, are dictated by the scenario files loaded when the game is initialized. Similar to furniture objects, 3D props will be deformed to change their proportions, adding to the variability of their appearance. These items cannot be placed into a player's inventory, or used in any game play mechanics.
 
 \subsubsection{Deformers}
-As stated previously, \ourteam{} will create a few deformers within \ourengine{} which will be used on 3D assets within the game in order to increase their visual variability and to help effect the atmosphere of the game. These will be performed using vertex manipulation in the form of a Lattice deformer.
+As stated previously, \ourteam{} will create a few deformers within \ourengine{} which will be used on 3D assets within the game in order to increase their visual variability and to help effect the atmosphere of the game. These will be performed using vertex manipulation in the form of twist and flare deformers.
